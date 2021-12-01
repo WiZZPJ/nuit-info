@@ -17,11 +17,11 @@ def envoyer():
         return render_template("envoyer.html", contenu=content)
 
 @app.route("/<page>")
-def page(p):
+def others(page):
     try:
-        return render_template(f"{p}.html")
+        return render_template(f"{page}.html")
     except:
-        return render_template("notfound.html", nom=p)
+        return render_template("notfound.html", nom=page)
 
 
 
