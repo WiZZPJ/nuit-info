@@ -20,8 +20,8 @@ def envoyer():
 @app.route("/<page>")
 def others(page):
     try:
-        return render_template(f"{page}.html")
-    except:
+        return render_template(f"{page}.html", style=page)
+    except FileNotFoundError:
         return render_template("notfound.html", nom=page), 404
 
 @app.route("/github", methods=["POST"])
