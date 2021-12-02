@@ -1,4 +1,5 @@
 from flask import Flask, render_template,request,redirect,url_for
+from subprocess import run
 
 app = Flask(__name__)
 
@@ -21,7 +22,16 @@ def others(page):
     try:
         return render_template(f"{page}.html")
     except:
-        return render_template("notfound.html", nom=page)
+        return render_template("notfound.html", nom=page), 404
+
+@app.route("/github", methods=["POST"])
+def github():
+    result = run(["git", "pull"])
+    print(result.returncode)
+    if result.returncode == 0:
+        return "Ok", 200
+    else:
+        return "Error", 500
 
 
 
