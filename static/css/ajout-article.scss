@@ -1,21 +1,15 @@
+@import "style";
 @import "theme";
-/* ====================================================
-Recreating the email field from https://webflow.com/cms. Just an experiment - not as cross-browser friendly as the original.
-Changed:
-- animated gradient bar to :after element
-- flexbox for layout
-==================================================== */
 
-// reset
 html {
     box-sizing: border-box;
     font-size: 10px;
 }
 input {
+    padding: 1.4rem 2rem 1.6rem;
     border-style: none;
     background: transparent;
     outline: none;
-    padding: 1.4rem 2rem 1.6rem;
 }
 
 .style-input {
@@ -27,18 +21,17 @@ input {
     margin: 0 auto;
     border-radius: 2px;
     background: $input-background;
+
     &:after {
         content: "";
         position: absolute;
-        left: 0px;
-        right: 0px;
-        bottom: 0px;
+        left: 0;
+        right: 0;
+        bottom: 0;
         z-index: 999;
         height: 2px;
-        border-bottom-left-radius: 2px;
-        border-bottom-right-radius: 2px;
-        background-position: 0% 0%;
-        background: linear-gradient(to right, #b294ff, #57e6e6, #feffb8, #57e6e6, #b294ff, #57e6e6);
+        border-radius: 0 0 2px 2px;
+        background: linear-gradient(to right, #b294ff, #57e6e6, #feffb8, #57e6e6, #b294ff, #57e6e6) 0 0;
         background-size: 500% auto;
         animation: gradient 3s linear infinite;
     }
@@ -50,6 +43,7 @@ input {
     font-size: 1.8rem;
     line-height: 2.4rem;
     vertical-align: middle;
+
     &::-webkit-input-placeholder {
         color: $input-text-inactive;
     }
@@ -61,6 +55,7 @@ input {
     line-height: 2.4rem;
     vertical-align: middle;
     transition: color 0.25s;
+
     &:hover {
         color: $input-text-active;
     }
