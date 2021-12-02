@@ -20,7 +20,7 @@ def envoyer():
 @app.route("/<page>")
 def others(page):
     try:
-        return render_template(f"{page}.html", style=page)
+        return render_template(f"{page}.html")
     except FileNotFoundError:
         return render_template("notfound.html", nom=page), 404
 
