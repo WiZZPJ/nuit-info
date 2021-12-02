@@ -1,0 +1,8 @@
+DROP TABLE Reward;
+DROP TABLE User;
+DROP TABLE Rescue;
+DROP TABLE Media;
+DROP TABLE Category;
+DROP TABLE Boat;
+DROP TABLE ArticleMedia;
+DROP TABLE Article;
