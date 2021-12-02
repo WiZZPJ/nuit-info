@@ -6,9 +6,9 @@ CREATE TABLE IF NOT EXISTS `User` (
     `rank` INT(2) UNSIGNED NOT NULL DEFAULT '0',
     `token` VARCHAR(255) NOT NULL,
     `banned` BOOLEAN NOT NULL DEFAULT FALSE,
-    PRIMARY KEY (`id`), 
+    PRIMARY KEY (`idUser`), 
     UNIQUE (`username`), 
-    UNIQUE (`email`)
+    UNIQUE (`userEmail`)
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `Article` (
@@ -20,9 +20,9 @@ CREATE TABLE IF NOT EXISTS `Article` (
     `articleAuthor` INT(11) NOT NULL,
     `accepted` BOOLEAN NOT NULL DEFAULT FALSE,
     `active` BOOLEAN NOT NULL,
-    PRIMARY KEY (`id`),
-    UNIQUE (`slug`)
-) ENGINE InnoDB;
+    PRIMARY KEY (`idArticle`),
+    UNIQUE (`slugArticle`)
+) ENGINE = InnoDB;
 
 ALTER TABLE `Article` 
     ADD CONSTRAINT `fk_Article_User`
@@ -30,12 +30,12 @@ ALTER TABLE `Article`
         REFERENCES `User` (`idUser`);
 
 CREATE TABLE IF NOT EXISTS `Media` (
-    `idFile` INT(11) NOT NULL AUTO_INCREMENT,
-    `slugFile` VARCHAR(255) NOT NULL,
-    `pathFile` VARCHAR(255) NOT NULL,
+    `idMedia` INT(11) NOT NULL AUTO_INCREMENT,
+    `slugMedia` VARCHAR(255) NOT NULL,
+    `pathMedia` VARCHAR(255) NOT NULL,
     `mimeType` VARCHAR(255) NOT NULL,
     `author` INT(11) NOT NULL,
-    PRIMARY KEY (`idFile`)
+    PRIMARY KEY (`idMedia`)
 ) ENGINE = InnoDB;
 
 ALTER TABLE `Media`
@@ -82,6 +82,19 @@ CREATE TABLE IF NOT EXISTS `Reward` (
 CREATE TABLE IF NOT EXISTS `Rescuer` (
     `firstName` VARCHAR(255) NOT NULL,
     `lastName` VARCHAR(255) NOT NULL,
-    `detail` JSON NOT NULL,
     PRIMARY KEY (`firstName`, `lastName`)
 ) ENGINE = InnoDB;
+
+CREATE TABLE IF NOT EXISTS `ArticleMedia` (
+    `aArticle` INT(11) NOT NULL,
+    `aMedia` INT(11) NOT NULL,
+    PRIMARY KEY (`aArticle`, `aMedia`)
+) ENGINE = InnoDB;
+
+ALTER TABLE `ArticleMedia`
+    ADD CONSTRAINT `fk_ArticleMedia_Article`
+        FOREIGN KEY (`aArticle`)
+        REFERENCES `Article` (`idArticle`),
+    ADD CONSTRAINT `fk_ArticleMedia_Media`
+        FOREIGN KEY (`aMedia`)
+        REFERENCES `Media` (`idMedia`);
