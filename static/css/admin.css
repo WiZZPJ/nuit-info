@@ -4,7 +4,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Remove default margin */
@@ -22,8 +23,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -64,16 +65,19 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
-*::before,
-*::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
+
 /*====================================================================================================================*/
 body {
   background-color: #c3e6f5;
@@ -81,32 +85,54 @@ body {
   width: 100vw;
   overflow: hidden;
 }
+
 body header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 1rem;
 }
+
 body header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 body header div img {
   margin: 1rem;
   height: 3rem;
 }
+
 body header nav a {
-  margin: 0.2rem 0.5rem;
-  padding: 0.3rem 0.5rem;
+  margin: .2rem .5rem;
+  padding: .3rem .5rem;
   text-decoration: none;
   text-transform: uppercase;
 }
+
 body header nav a:hover {
   background-color: black;
-  border-radius: 0.2rem;
+  border-radius: .2rem;
 }
+
 body .ocean {
   height: 1rem;
   width: 100%;
@@ -115,6 +141,7 @@ body .ocean {
   left: 0;
   background: #0067B3;
 }
+
 body .ocean .wave {
   background: url(/static/assets/wave.svg) repeat-x;
   position: absolute;
@@ -122,15 +149,31 @@ body .ocean .wave {
   z-index: 10;
   width: 6400px;
   height: 198px;
-  animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
-  transform: translate3d(0, 0, 0);
+  -webkit-animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+          animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
+
 body .ocean .wave.deux {
-  animation-name: wave2;
+  -webkit-animation-name: wave2;
+          animation-name: wave2;
 }
+
 body .ocean .wave.trois {
-  animation-name: wave3;
+  -webkit-animation-name: wave3;
+          animation-name: wave3;
 }
+
+@-webkit-keyframes wave1 {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
 @keyframes wave1 {
   0% {
     margin-left: 0;
@@ -139,6 +182,16 @@ body .ocean .wave.trois {
     margin-left: -1600px;
   }
 }
+
+@-webkit-keyframes wave2 {
+  0% {
+    margin-left: -300px;
+  }
+  100% {
+    margin-left: -1900px;
+  }
+}
+
 @keyframes wave2 {
   0% {
     margin-left: -300px;
@@ -147,6 +200,16 @@ body .ocean .wave.trois {
     margin-left: -1900px;
   }
 }
+
+@-webkit-keyframes wave3 {
+  0% {
+    margin-left: -600px;
+  }
+  100% {
+    margin-left: -2200px;
+  }
+}
+
 @keyframes wave3 {
   0% {
     margin-left: -600px;
@@ -155,12 +218,28 @@ body .ocean .wave.trois {
     margin-left: -2200px;
   }
 }
-@keyframes swell {
-  0%, 100% {
-    transform: translate3d(0, -40px, 0);
+
+@-webkit-keyframes swell {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, -40px, 0);
+            transform: translate3d(0, -40px, 0);
   }
   50% {
-    transform: translate3d(0, -10px, 0);
+    -webkit-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, -40px, 0);
+            transform: translate3d(0, -40px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0);
   }
 }
 
@@ -168,7 +247,8 @@ body .ocean .wave.trois {
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Remove default margin */
@@ -186,8 +266,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -228,16 +308,19 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
-*::before,
-*::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
+
 /*====================================================================================================================*/
 body {
   background-color: #c3e6f5;
@@ -245,32 +328,54 @@ body {
   width: 100vw;
   overflow: hidden;
 }
+
 body header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 1rem;
 }
+
 body header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 body header div img {
   margin: 1rem;
   height: 3rem;
 }
+
 body header nav a {
-  margin: 0.2rem 0.5rem;
-  padding: 0.3rem 0.5rem;
+  margin: .2rem .5rem;
+  padding: .3rem .5rem;
   text-decoration: none;
   text-transform: uppercase;
 }
+
 body header nav a:hover {
   background-color: black;
-  border-radius: 0.2rem;
+  border-radius: .2rem;
 }
+
 body .ocean {
   height: 1rem;
   width: 100%;
@@ -279,6 +384,7 @@ body .ocean {
   left: 0;
   background: #0067B3;
 }
+
 body .ocean .wave {
   background: url(/static/assets/wave.svg) repeat-x;
   position: absolute;
@@ -286,15 +392,22 @@ body .ocean .wave {
   z-index: 10;
   width: 6400px;
   height: 198px;
-  animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
-  transform: translate3d(0, 0, 0);
+  -webkit-animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+          animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
+
 body .ocean .wave.deux {
-  animation-name: wave2;
+  -webkit-animation-name: wave2;
+          animation-name: wave2;
 }
+
 body .ocean .wave.trois {
-  animation-name: wave3;
+  -webkit-animation-name: wave3;
+          animation-name: wave3;
 }
+
 @keyframes wave1 {
   0% {
     margin-left: 0;
@@ -303,6 +416,7 @@ body .ocean .wave.trois {
     margin-left: -1600px;
   }
 }
+
 @keyframes wave2 {
   0% {
     margin-left: -300px;
@@ -311,6 +425,7 @@ body .ocean .wave.trois {
     margin-left: -1900px;
   }
 }
+
 @keyframes wave3 {
   0% {
     margin-left: -600px;
@@ -319,18 +434,22 @@ body .ocean .wave.trois {
     margin-left: -2200px;
   }
 }
+
 @keyframes swell {
-  0%, 100% {
-    transform: translate3d(0, -40px, 0);
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, -40px, 0);
+            transform: translate3d(0, -40px, 0);
   }
   50% {
-    transform: translate3d(0, -10px, 0);
+    -webkit-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0);
   }
 }
 
 input,
 textarea {
-  padding: 1.4rem 2rem 1.6rem;
+  padding: 1.4rem 0rem 1.6rem;
   border-style: none;
   background: transparent;
   outline: none;
@@ -342,14 +461,20 @@ textarea {
 
 .style-input {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
   border-radius: 2px;
   background: rgba(58, 59, 63, 0.795);
 }
+
 .style-input:after {
   content: "";
   position: absolute;
@@ -361,9 +486,11 @@ textarea {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   background-position: 0% 0%;
+  background: -webkit-gradient(linear, left top, right top, from(#FFD53D), color-stop(#40B0DF), to(#FFD53D));
   background: linear-gradient(to right, #FFD53D, #40B0DF, #FFD53D);
   background-size: 500% auto;
-  animation: gradient 3s linear infinite;
+  -webkit-animation: gradient 3s linear infinite;
+          animation: gradient 3s linear infinite;
 }
 
 .submit:hover {
@@ -372,12 +499,15 @@ textarea {
 
 .style-input input,
 textarea {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   color: white;
   font-size: 1.8rem;
   line-height: 2.4rem;
   vertical-align: middle;
 }
+
 .style-input input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #7881A1;
@@ -388,52 +518,76 @@ textarea::-webkit-input-placeholder {
   font-size: 2.4rem;
   line-height: 2.4rem;
   vertical-align: middle;
+  -webkit-transition: color 0.25s;
   transition: color 0.25s;
 }
+
 .style-input button:hover {
   color: #BFD2FF;
 }
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 #col-1 {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
+
 #col-1 h1 {
   text-align: center;
   margin-bottom: 50px;
 }
 
 #col-2 {
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   text-align: center;
 }
+
 #col-2 h1 {
   text-align: center;
   margin-bottom: 50px;
 }
+
 #col-2 .article {
   border: 1px solid #40B0DF;
   border-radius: 20px;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #40B0DF;
   max-width: 500px;
   margin-bottom: 50px;
 }
+
 #col-2 .article .titre {
   font-size: 20px;
 }
+
 #col-2 .article .titre i {
   font-size: 15px;
 }
+
 #col-2 .article .titre a {
   color: black;
 }
+
 #col-2 .article .truncate {
   width: 400px;
   margin: 50px 50px 20px 50px;
@@ -443,4 +597,9 @@ textarea::-webkit-input-placeholder {
   font-size: 15px;
 }
 
+#col-2 .solid {
+  margin: 0 -15px;
+  border: 0;
+  border-top: 1px solid #c9c7c7;
+}
 /*# sourceMappingURL=admin.css.map */
