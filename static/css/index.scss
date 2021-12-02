@@ -2,14 +2,6 @@
 @import "style";
 
 body {
-    img#poisson-volant {
-        position: absolute;
-        width: 5rem;
-        bottom: 10rem;
-        transform: rotateZ(-45deg);
-        animation-name: poisson-volant;
-    }
-
     .ocean {
         height: 1rem;
         width: 100%;
