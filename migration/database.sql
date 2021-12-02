@@ -64,6 +64,7 @@ CREATE TABLE IF NOT EXISTS `Rescue` (
     `accepted` BOOLEAN DEFAULT FALSE,
     `active` BOOLEAN,
     `boatUsed` INT(11) NOT NULL,
+    "rescueAuthor" INT(11) NOT NULL,
     PRIMARY KEY (`idRescue`)
 ) ENGINE = InnoDB;
 
@@ -130,7 +131,10 @@ ALTER TABLE `Category`
 ALTER TABLE `Rescue`
     ADD CONSTRAINT `fk_Rescue_Boat`
         FOREIGN KEY (`boatUsed`)
-        REFERENCES `Boat` (`idBoat`);
+        REFERENCES `Boat` (`idBoat`),
+    ADD CONSTRAINT "fk_Rescue_User"
+        FOREIGN KEY ("rescueAuthor")
+        REFERENCES "User" ("idUser");
 
 ALTER TABLE `Reward` 
     ADD CONSTRAINT `fk_Reward_Rescue`
