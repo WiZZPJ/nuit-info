@@ -80,6 +80,8 @@ select {
 body {
     background-color: lighten($light-blue, 30%);
     font-family: sans-serif;
+    width: 100vw;
+    overflow: hidden;
 
     header {
         display: flex;

@@ -76,6 +76,8 @@ select {
 body {
   background-color: #c3e6f5;
   font-family: sans-serif;
+  width: 100vw;
+  overflow: hidden;
 }
 body header {
   display: flex;
