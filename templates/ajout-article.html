@@ -6,7 +6,7 @@
 
     <title>Ajout article | Sauveteurs du dunkerquois</title>
 
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/ajout-article.css') }}">
     <!--<link rel="stylesheet" href="css/print.css" media="print">-->
 
     <meta name="description" content="Sauveteurs du dunkerquois">
@@ -32,11 +32,22 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body>
-    <form>
-        <input name="nom-article" placeholder="Nom de l'article"></input>
-        <input name="histoire" placeholder="Histoire"></input>
-        <input name="sauveteur" placeholder="Nom du sauveteur"></input>
-        <input name="sauver" placeholder="Nom de la personne sauvée"></input>
-    </form>
+    <div class="container">
+
+        <!--Inputs-->
+        <div class="style-input">
+          <input type="text" name="sauveteur" placeholder="Nom sauveteur"></input>
+        </div>
+
+        <div class="style-input">
+            <input type="text" name="sauve" placeholder="Nom de la personne sauvée"></input>
+        </div>
+
+          <div class="style-input">
+            <input type="text" name="histoire" placeholder="Histoire"></input>
+        </div>
+      
+      </div>
+   
 </body>
 </html>
