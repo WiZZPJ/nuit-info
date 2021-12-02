@@ -107,6 +107,62 @@ body header nav a:hover {
   background-color: black;
   border-radius: 0.2rem;
 }
+body .ocean {
+  height: 1rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #0067B3;
+}
+body .ocean .wave {
+  background: url(/static/assets/wave.svg) repeat-x;
+  position: absolute;
+  bottom: -10px;
+  z-index: 10;
+  width: 6400px;
+  height: 198px;
+  animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+  transform: translate3d(0, 0, 0);
+}
+body .ocean .wave.deux {
+  animation-name: wave2;
+}
+body .ocean .wave.trois {
+  animation-name: wave3;
+}
+@keyframes wave1 {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+@keyframes wave2 {
+  0% {
+    margin-left: -300px;
+  }
+  100% {
+    margin-left: -1900px;
+  }
+}
+@keyframes wave3 {
+  0% {
+    margin-left: -600px;
+  }
+  100% {
+    margin-left: -2200px;
+  }
+}
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0, -40px, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
 
 /* Box sizing rules */
 *,
@@ -214,6 +270,62 @@ body header nav a {
 body header nav a:hover {
   background-color: black;
   border-radius: 0.2rem;
+}
+body .ocean {
+  height: 1rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #0067B3;
+}
+body .ocean .wave {
+  background: url(/static/assets/wave.svg) repeat-x;
+  position: absolute;
+  bottom: -10px;
+  z-index: 10;
+  width: 6400px;
+  height: 198px;
+  animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+  transform: translate3d(0, 0, 0);
+}
+body .ocean .wave.deux {
+  animation-name: wave2;
+}
+body .ocean .wave.trois {
+  animation-name: wave3;
+}
+@keyframes wave1 {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+@keyframes wave2 {
+  0% {
+    margin-left: -300px;
+  }
+  100% {
+    margin-left: -1900px;
+  }
+}
+@keyframes wave3 {
+  0% {
+    margin-left: -600px;
+  }
+  100% {
+    margin-left: -2200px;
+  }
+}
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0, -40px, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
 }
 
 input,
