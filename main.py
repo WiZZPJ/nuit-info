@@ -11,7 +11,7 @@ def index():
 @app.route("/envoyer", methods=["POST"])
 def envoyer():
     try:
-        content=None
+        content = None
     except:
         content = None
     finally:
