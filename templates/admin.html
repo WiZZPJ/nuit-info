@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Espace d'administration | {% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <!--Inputs-->
+    
+        <div id="col-1">
+            <h1>Ajout d'un modérateur</h1>
+          <form>
+                <div class="style-input">
+                    <input type="text" name="email" placeholder="Email du modérateur">
+                </div>
+
+                <div class="style-input">
+                    <input type="submit" class="submit" name="ajouter" value="Ajouter">
+                </div>
+            </form>
+        </div>
+        <div id="col-2">
+            <h1>Articles non validés</h1>
+            
+        </div> 
+    
+</div>
+{% endblock %}

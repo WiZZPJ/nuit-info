@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Inscription | {% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <!--Inputs-->
+    <form>
+        <div class="style-input">
+            <input type="text" name="email" placeholder="Adresse email">
+        </div>
+
+        <div class="style-input">
+            <input type="password" name="mdp" placeholder="Mot de passe">
+        </div>
+
+        <div class="style-input">
+            <input type="password" name="mdp-conf" placeholder="Confirmation du mot de passe">
+        </div>
+
+        <div class="style-input">
+            <input type="submit" class="submit" name="inscription" value="Inscription">
+        </div>
+    </form>
+
+</div>
+{% endblock %}

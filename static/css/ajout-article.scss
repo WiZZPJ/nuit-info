@@ -1,11 +1,20 @@
 @import "style";
 @import "theme";
 
-input {
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+}
+input, 
+textarea {
     padding: 1.4rem 2rem 1.6rem;
     border-style: none;
     background: transparent;
     outline: none;
+}
+
+textarea {
+    width: 100%;
 }
 
 .style-input {
@@ -35,7 +44,12 @@ input {
     }
 }
 
-.style-input input {
+.submit:hover {
+    cursor: pointer;
+}
+
+.style-input input, 
+textarea{
     flex-grow: 1;
     color: white;
     font-size: 1.8rem;
