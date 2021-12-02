@@ -84,6 +84,10 @@ body {
     width: 100vw;
     overflow: hidden;
 
+    *::selection {
+        background-color: lighten($dark-blue, 40%);
+    }
+
     header {
         display: flex;
         flex-direction: row;
@@ -103,14 +107,17 @@ body {
         }
 
         nav {
+
             a {
-                margin: .2rem .5rem;
-                padding: .3rem .5rem;
+                margin: .1rem .3rem;
+                padding: .5rem .8rem;
                 text-decoration: none;
                 text-transform: uppercase;
+                color: $deep-blue;
+                transition-duration: .2s;
 
                 &:hover {
-                    background-color: black;
+                    background-color: lighten(rgba(0, 103, 179, .6), 20%);
                     border-radius: .2rem;
                 }
             }
@@ -121,15 +128,16 @@ body {
         height: 1rem;
         width: 100%;
         position: absolute;
+        z-index: -1;
         bottom: 0;
         left: 0;
         background: $dark-blue;
 
         .wave {
-            background: url(/static/assets/wave.svg) repeat-x;
+            background: url("/static/assets/wave.svg") repeat-x;
             position: absolute;
             bottom: -10px;
-            z-index: 10;
+            z-index: -1;
             width: 6400px;
             height: 198px;
             animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
