@@ -95,13 +95,6 @@ body header div img {
   margin: 1rem;
   height: 3rem;
 }
-body img#poisson-volant {
-  position: absolute;
-  width: 5rem;
-  bottom: 10rem;
-  transform: rotateZ(-45deg);
-  animation-name: poisson-volant;
-}
 body .ocean {
   height: 1rem;
   width: 100%;
