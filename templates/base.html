@@ -7,7 +7,7 @@
 
     <title>{% block title %}{% endblock %}Sauveteurs du dunkerquois</title>
 
-    <link rel="stylesheet" href="/static/css/{{ style }}.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/' + self._TemplateReference__context.name.replace('.html', '.css')) }}">
     <!--<link rel="stylesheet" href="css/print.css" media="print">-->
 
     <meta name="description" content="Sauveteurs du dunkerquois">
