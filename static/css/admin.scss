@@ -17,11 +17,47 @@
   
   #col-2 {
     flex: 1;
-
+    text-align: center;
     h1 {
         text-align: center;
         margin-bottom: 50px;
     }
+    .article {
+        border: 1px solid $light-blue;
+        border-radius: 20px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        background-color: $light-blue;
+        max-width: 500px;
+        margin-bottom: 50px;
+
+        .titre {
+        font-size: 20px;
+
+        i {
+            font-size: 15px;
+        }
+
+        a {
+            color: black
+        }
+
+        }
+
+        .truncate {
+            width: 400px;
+            margin: 50px 50px 20px 50px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 15px;
+          }
+    }
+    
+    
+
   }
 
   

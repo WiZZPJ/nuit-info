@@ -77,6 +77,13 @@ select {
 }
 
 /*====================================================================================================================*/
+body {
+  background-color: #c3e6f5;
+  font-family: sans-serif;
+  width: 100vw;
+  overflow: hidden;
+}
+
 body header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -91,6 +98,7 @@ body header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 1rem;
 }
 
 body header div {
@@ -104,6 +112,11 @@ body header div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+body header div img {
+  margin: 1rem;
+  height: 3rem;
 }
 
 /* Box sizing rules */
@@ -185,6 +198,13 @@ select {
 }
 
 /*====================================================================================================================*/
+body {
+  background-color: #c3e6f5;
+  font-family: sans-serif;
+  width: 100vw;
+  overflow: hidden;
+}
+
 body header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -199,6 +219,7 @@ body header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 1rem;
 }
 
 body header div {
@@ -212,6 +233,11 @@ body header div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+body header div img {
+  margin: 1rem;
+  height: 3rem;
 }
 
 html {
@@ -320,10 +346,53 @@ textarea::-webkit-input-placeholder {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  text-align: center;
 }
 
 #col-2 h1 {
   text-align: center;
   margin-bottom: 50px;
+}
+
+#col-2 .article {
+  border: 1px solid #40B0DF;
+  border-radius: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #40B0DF;
+  max-width: 500px;
+  margin-bottom: 50px;
+}
+
+#col-2 .article .titre {
+  font-size: 20px;
+}
+
+#col-2 .article .titre i {
+  font-size: 15px;
+}
+
+#col-2 .article .titre a {
+  color: black;
+}
+
+#col-2 .article .truncate {
+  width: 400px;
+  margin: 50px 50px 20px 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
 }
 /*# sourceMappingURL=admin.css.map */
