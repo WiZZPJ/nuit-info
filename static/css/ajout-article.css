@@ -14,6 +14,7 @@ input {
   border-style: none;
   background: transparent;
   outline: none;
+  padding: 1.4rem 2rem 1.6rem;
 }
 
 .style-input {
@@ -29,7 +30,6 @@ input {
   max-width: 400px;
   margin: 0 auto;
   border-radius: 2px;
-  padding: 1.4rem 2rem 1.6rem;
   background: rgba(57, 63, 84, 0.8);
 }
 
