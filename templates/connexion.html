@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Connexion | {% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <!--Inputs-->
+    <form>
+        <div class="style-input">
+            <input type="text" name="email" placeholder="Adresse email">
+        </div>
+
+        <div class="style-input">
+            <input type="password" name="mdp" placeholder="Mot de passe">
+        </div>
+
+        <div class="style-input">
+            <input type="submit" class="submit" name="connexion" value="Connexion">
+        </div>
+    </form>
+
+</div>
+{% endblock %}

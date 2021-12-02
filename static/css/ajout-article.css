@@ -95,11 +95,17 @@ body header div img {
   margin: 1rem;
   height: 3rem;
 }
-input {
+
+input,
+textarea {
   padding: 1.4rem 2rem 1.6rem;
   border-style: none;
   background: transparent;
   outline: none;
+}
+
+textarea {
+  width: 100%;
 }
 
 .style-input {
@@ -128,14 +134,23 @@ input {
   animation: gradient 3s linear infinite;
 }
 
-.style-input input {
-  flex-grow: 1;
+.submit:hover {
+  cursor: pointer;
+}
+
+.style-input input,
+textarea {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   color: white;
   font-size: 1.8rem;
   line-height: 2.4rem;
   vertical-align: middle;
 }
-.style-input input::-webkit-input-placeholder {
+
+.style-input input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
   color: #7881A1;
 }
 
