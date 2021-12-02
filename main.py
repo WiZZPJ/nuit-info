@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", style="index")
 
 @app.route("/envoyer", methods=["POST"])
 def envoyer():
