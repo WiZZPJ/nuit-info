@@ -1,4 +1,5 @@
 /* Box sizing rules */
+@import url("../fonts/recoleta/recoleta.css");
 *,
 *::before,
 *::after {
@@ -75,7 +76,7 @@ select {
 /*====================================================================================================================*/
 body {
   background-color: #c3e6f5;
-  font-family: sans-serif;
+  font-family: "recoleta-bold", sans-serif;
   width: 100vw;
   overflow: hidden;
 }
@@ -95,6 +96,17 @@ body header div img {
   margin: 1rem;
   height: 3rem;
 }
+body header nav a {
+  margin: 0.2rem 0.5rem;
+  padding: 0.3rem 0.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+body header nav a:hover {
+  background-color: black;
+  border-radius: 0.2rem;
+}
+
 body .ocean {
   height: 1rem;
   width: 100%;

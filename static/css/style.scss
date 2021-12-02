@@ -76,10 +76,11 @@ select {
 
 /*====================================================================================================================*/
 @import "theme";
+@import url("../fonts/recoleta/recoleta.css");
 
 body {
     background-color: lighten($light-blue, 30%);
-    font-family: sans-serif;
+    font-family: "recoleta-bold", sans-serif;
     width: 100vw;
     overflow: hidden;
 
@@ -102,7 +103,17 @@ body {
         }
 
         nav {
+            a {
+                margin: .2rem .5rem;
+                padding: .3rem .5rem;
+                text-decoration: none;
+                text-transform: uppercase;
 
+                &:hover {
+                    background-color: black;
+                    border-radius: .2rem;
+                }
+            }
         }
     }
 }
