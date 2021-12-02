@@ -18,7 +18,6 @@ CREATE TABLE IF NOT EXISTS `Article` (
     `articleDate` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `articleTitle` VARCHAR(255) NOT NULL,
     `articleContent` LONGTEXT NOT NULL,
-    `articleAuthor` INT(11) NOT NULL,
     `accepted` BOOLEAN NOT NULL DEFAULT FALSE,
     `active` BOOLEAN NOT NULL,
     `articleAuthor` INT(11) NOT NULL,
@@ -64,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `Rescue` (
     `accepted` BOOLEAN DEFAULT FALSE,
     `active` BOOLEAN,
     `boatUsed` INT(11) NOT NULL,
-    "rescueAuthor" INT(11) NOT NULL,
+    `rescueAuthor` INT(11) NOT NULL,
     PRIMARY KEY (`idRescue`)
 ) ENGINE = InnoDB;
 
@@ -78,13 +77,15 @@ CREATE TABLE IF NOT EXISTS `Reward` (
 CREATE TABLE IF NOT EXISTS `Rescuer` (
     `firstName` VARCHAR(255) NOT NULL,
     `lastName` VARCHAR(255) NOT NULL,
+    `detail` JSON,
     PRIMARY KEY (`firstName`, `lastName`)
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `RescueRescuer` (
-    `aRescuer` INT(11) NOT NULL,
+    `aRescuerFName` VARCHAR(255) NOT NULL,
+    `aRescuerLName` VARCHAR(255) NOT NULL,
     `aRescue` INT(11) NOT NULL,
-    PRIMARY KEY (`aRescuer`, `aRescue`)
+    PRIMARY KEY (`aRescuerFName`, `aRescuerLName`, `aRescue`)
 ) ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `ArticleMedia` (
@@ -100,15 +101,16 @@ CREATE TABLE IF NOT EXISTS `ArticleCategory` (
 ) ENGINE  = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `RescuerReward` (
-    `aRescuer` INT(11) NOT NULL,
+    `aRescuerFName` VARCHAR(255) NOT NULL,
+    `aRescuerLName` VARCHAR(255) NOT NULL,
     `aReward` INT(11) NOT NULL,
-    PRIMARY KEY (`aRescuer`, `aReward`);
+    PRIMARY KEY (`aRescuerFName`, `aRescuerLName`, `aReward`)
 ) ENGINE = InnoDB;
 
 ALTER TABLE `RescuerReward` 
     ADD CONSTRAINT `fk_RescuerReward_Rescuer`
-        FOREIGN KEY (`aRescuer`)
-        REFERENCES `Rescuer` (`idRescuer`),
+        FOREIGN KEY (`aRescuerFName`, `aRescuerLName`)
+        REFERENCES `Rescuer` (`firstName`, `lastName`),
     ADD CONSTRAINT `fk_RescuerReward_Reward`
         FOREIGN KEY (`aReward`)
         REFERENCES `Reward` (`idReward`);
@@ -132,9 +134,9 @@ ALTER TABLE `Rescue`
     ADD CONSTRAINT `fk_Rescue_Boat`
         FOREIGN KEY (`boatUsed`)
         REFERENCES `Boat` (`idBoat`),
-    ADD CONSTRAINT "fk_Rescue_User"
-        FOREIGN KEY ("rescueAuthor")
-        REFERENCES "User" ("idUser");
+    ADD CONSTRAINT `fk_Rescue_User`
+        FOREIGN KEY (`rescueAuthor`)
+        REFERENCES `User` (`idUser`);
 
 ALTER TABLE `Reward` 
     ADD CONSTRAINT `fk_Reward_Rescue`
@@ -143,8 +145,8 @@ ALTER TABLE `Reward`
 
 ALTER TABLE `RescueRescuer`
     ADD CONSTRAINT `fk_RescueRescuer_Rescuer`
-        FOREIGN KEY (`aRescuer`)
-        REFERENCES `Rescuer` (`idRescuer`),
+        FOREIGN KEY (`aRescuerFName`, `aRescuerLName`)
+        REFERENCES `Rescuer` (`firstName`, `lastName`),
     ADD CONSTRAINT `fk_RescueRescuer_Rescue`
         FOREIGN KEY (`aRescue`)
         REFERENCES `Rescue` (`idRescue`);
