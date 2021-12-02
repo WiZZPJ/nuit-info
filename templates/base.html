@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <!--<link rel="stylesheet" href="css/print.css" media="print">-->
+
+    <meta name="description" content="Sauveteurs du dunkerquois">
+    <meta property="og:title" content="Sauveteurs du dunkerquois">
+    <meta property="og:description" content="L'histoire des sauveteurs du dunkerquois de 1740 à nos jours * Dernières publications et évènements en relation avec le sauvetage">
+    <meta property="og:image" content="https://nuit.ozna.me/assets/og_image.jpg">
+    <meta property="og:image:alt" content="Les sauveteurs du dunkerquois">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://nuit.ozna.me">
+    <link rel="canonical" href="https://nuit.ozna.me">
+    <meta name="robots" content="index, follow">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    {% endblock %}
+</head>
+
+
+<body>
+    {% block header %}{% endblock %}
+    {% block content %}{% endblock %}
+</body>
+</html>
