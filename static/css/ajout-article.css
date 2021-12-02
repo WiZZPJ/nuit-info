@@ -1,7 +1,30 @@
-.webflow-style-input {
+/* ====================================================
+Recreating the email field from https://webflow.com/cms. Just an experiment - not as cross-browser friendly as the original.
+Changed:
+- animated gradient bar to :after element
+- flexbox for layout
+==================================================== */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 10px;
+}
+
+input {
+  border-style: none;
+  background: transparent;
+  outline: none;
+}
+
+.style-input {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
@@ -9,7 +32,8 @@
   padding: 1.4rem 2rem 1.6rem;
   background: rgba(57, 63, 84, 0.8);
 }
-.webflow-style-input:after {
+
+.style-input:after {
   content: "";
   position: absolute;
   left: 0px;
@@ -20,31 +44,37 @@
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   background-position: 0% 0%;
+  background: -webkit-gradient(linear, left top, right top, from(#b294ff), color-stop(#57e6e6), color-stop(#feffb8), color-stop(#57e6e6), color-stop(#b294ff), to(#57e6e6));
   background: linear-gradient(to right, #b294ff, #57e6e6, #feffb8, #57e6e6, #b294ff, #57e6e6);
   background-size: 500% auto;
-  animation: gradient 3s linear infinite;
+  -webkit-animation: gradient 3s linear infinite;
+          animation: gradient 3s linear infinite;
 }
 
-.webflow-style-input input {
-  flex-grow: 1;
+.style-input input {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   color: #BFD2FF;
   font-size: 1.8rem;
   line-height: 2.4rem;
   vertical-align: middle;
 }
-.webflow-style-input input::-webkit-input-placeholder {
+
+.style-input input::-webkit-input-placeholder {
   color: #7881A1;
 }
 
-.webflow-style-input button {
+.style-input button {
   color: #7881A1;
   font-size: 2.4rem;
   line-height: 2.4rem;
   vertical-align: middle;
+  -webkit-transition: color 0.25s;
   transition: color 0.25s;
 }
-.webflow-style-input button:hover {
+
+.style-input button:hover {
   color: #BFD2FF;
 }
-
 /*# sourceMappingURL=ajout-article.css.map */
