@@ -1,0 +1,60 @@
+@import "style";
+@import "theme";
+
+input {
+    padding: 1.4rem 2rem 1.6rem;
+    border-style: none;
+    background: transparent;
+    outline: none;
+}
+
+.style-input {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 2px;
+    background: $input-background;
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999;
+        height: 2px;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        background-position: 0% 0%;
+        background: linear-gradient(to right, $yellow, $light-blue, $yellow);
+        background-size: 500% auto;
+        animation: gradient 3s linear infinite;
+    }
+}
+
+.style-input input {
+    flex-grow: 1;
+    color: white;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    vertical-align: middle;
+
+    &::-webkit-input-placeholder {
+        color: $input-text-inactive;
+    }
+}
+
+.style-input button {
+    color: $input-text-inactive;
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    vertical-align: middle;
+    transition: color 0.25s;
+
+    &:hover {
+        color: $input-text-active;
+    }
+}

@@ -1,4 +1,5 @@
 from flask import Flask, render_template,request,redirect,url_for
+import jinja2
 from subprocess import run
 
 app = Flask(__name__)
@@ -6,7 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", style="index")
 
 @app.route("/envoyer", methods=["POST"])
 def envoyer():
@@ -21,8 +22,10 @@ def envoyer():
 def others(page):
     try:
         return render_template(f"{page}.html")
-    except:
+    except (FileNotFoundError, jinja2.exceptions.TemplateNotFound):
         return render_template("notfound.html", nom=page), 404
+
+
 
 @app.route("/github", methods=["POST"])
 def github():
