@@ -79,6 +79,11 @@ body header {
   align-items: center;
   justify-content: space-between;
 }
+body header div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 body {
   background-color: #c3e6f5;
 }
