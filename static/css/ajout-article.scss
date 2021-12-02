@@ -30,8 +30,10 @@ input {
         bottom: 0;
         z-index: 999;
         height: 2px;
-        border-radius: 0 0 2px 2px;
-        background: linear-gradient(to right, #b294ff, #57e6e6, #feffb8, #57e6e6, #b294ff, #57e6e6) 0 0;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        background-position: 0% 0%;
+        background: linear-gradient(to right, $yellow, $light-blue, $yellow);
         background-size: 500% auto;
         animation: gradient 3s linear infinite;
     }
@@ -39,7 +41,7 @@ input {
 
 .style-input input {
     flex-grow: 1;
-    color: $input-text-active;
+    color: white;
     font-size: 1.8rem;
     line-height: 2.4rem;
     vertical-align: middle;
