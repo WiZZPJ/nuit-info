@@ -559,8 +559,6 @@ textarea::-webkit-input-placeholder {
   height: 500px;
   margin: 50px auto;
   padding: 45px 65px;
-  background: -webkit-gradient(linear, left top, right top, from(#FFD53D), to(#0067B3));
-  background: linear-gradient(to right, #FFD53D, #0067B3);
 }
 
 .form__box {
