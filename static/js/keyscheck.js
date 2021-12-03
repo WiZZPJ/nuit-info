@@ -1,6 +1,8 @@
 const pressed = [];
+const pressed2 = [];
 
 const secretCode = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRight";
+const secretCode2 = "jesuisunelicorne";
 
 window.addEventListener("keyup", e => {
     pressed.push(e.key);
@@ -18,6 +20,23 @@ window.addEventListener("keyup", e => {
             sessionStorage.setItem("dark", "false");
         }
         pressed.length = 0;
+    }
+
+});
+
+window.addEventListener("keyup", e => {
+    pressed2.push(e.key);
+    pressed2.splice(
+        -secretCode2.length - 1,
+        pressed2.length - secretCode2.length
+    );
+
+    if (pressed2.join("").includes(secretCode2)) {
+        for(let i =0; i < 10; i++) {
+            alert("Ahah je te spam c'est drole");
+        }
+        
+        pressed2.length = 0;
     }
 
 });

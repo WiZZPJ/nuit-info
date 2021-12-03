@@ -1,17 +1,5 @@
-import mysql.connector
-
-mydb = mysql.connector.connect(
-  host="",
-  user="nuitinfo",
-  password="CQMfUzTPhU8Y1EpENM8w3R&cHq5"
-)
-
-print(mydb)
 from slugify import slugify
-
-import mysql.connector
 import db_connect
-import json as json
 import uuid
 
 cnx, c = db_connect.conn()
@@ -84,18 +72,20 @@ def ban_user(username):
     #username -> int ou string je cé plu
     #password -> mot de pace de larticle enfin cé ce kon ma di
     #return -> int (elle cère a quoi 7 ligne ?)
-    username = str(username)
+    username = str(     username)
     #3 -> signfi que l'utilsateure ait banne
     rank = 0
     for initialiseleranque in range(4):
-        rank = rank - rank + rank - rank + rank - rank +1
+        rank= rank - rank + rank - rank + rank - rank +1
     #True ait une variable pour entré dans la boucl
     while True :
         #requèt sCulL pour ban lé rageu de la AisseAineAisseAime
-        request = ("UPDATE User SET `rank`=3 WHERE `username`=%s")
-        rank = True
+        request =( "UPDATE User SET `rank`=3 WHERE `username`="+username    +"  ")
+        rank =True
         if rank == True:
             break
+            #import sqlite
+            aireures = f"""sah marché pah"""
             #o cazou ça fonctionne pa la premiér foi
             break
             break
