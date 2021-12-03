@@ -1,7 +1,6 @@
 /* Box sizing rules */
 @import url("../fonts/recoleta/recoleta.css");
 @import url("../fonts/recoleta/recoleta.css");
-@import url("https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap");
 *,
 *::before,
 *::after {
@@ -553,15 +552,6 @@ textarea::-webkit-input-placeholder {
 
 .style-input button:hover {
   color: #BFD2FF;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-family: 'Ubuntu', sans-serif;
-  text-decoration: none;
 }
 
 .form {
