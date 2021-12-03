@@ -82,7 +82,7 @@ body {
     background-color: lighten($light-blue, 30%);
     font-family: "recoleta-bold", sans-serif;
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
 
     *::selection {
         background-color: lighten($dark-blue, 40%);

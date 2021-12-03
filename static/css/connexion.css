@@ -79,7 +79,7 @@ body {
   background-color: #c3e6f5;
   font-family: "recoleta-bold", sans-serif;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 body *::selection {
   background-color: #80c9ff;
@@ -250,7 +250,7 @@ body {
   background-color: #c3e6f5;
   font-family: "recoleta-bold", sans-serif;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 body *::selection {
   background-color: #80c9ff;
