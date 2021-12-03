@@ -466,7 +466,7 @@ textarea {
   display: flex;
   flex-direction: row;
   width: 100%;
-  max-width: 400px;
+  max-width: 80%;
   margin: 0 auto;
   border-radius: 2px;
   background: rgba(58, 59, 63, 0.795);
@@ -514,6 +514,15 @@ textarea::-webkit-input-placeholder {
 }
 .style-input button:hover {
   color: #BFD2FF;
+}
+
+form > .ck {
+  width: 80% !important;
+  margin: 0 auto !important;
+}
+
+.ck-content {
+  height: 50vh !important;
 }
 
 .form {

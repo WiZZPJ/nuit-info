@@ -7,7 +7,54 @@
     <input type="text" name="q" placeholder="Rechercher">
     <input type="submit" value="&#128269;">
 </form>
+<article></article>
 {% endblock %}
 {% block indexContent %}
+<script>
+    let form = document.querySelector('form');
+    form.onkeyup = (e) => {
+        e.preventDefault();
+        let data = {};
 
+        form.querySelectorAll('input[name]').forEach(elem => {
+            data[elem.name] = elem.value;
+        });
+
+        let payload = new FormData();
+        payload.append( "json", JSON.stringify(data));
+
+        fetch('/api/v1/rechercher', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: payload
+        }).then(async data => {
+            if (data.status === 200) {
+                let res = await data.json();
+                let article = document.querySelector('body article');
+                res.forEach(elem => {
+                    let title = document.createElement('a');
+                    title.href = `/article/${elem.articleSlug}`;
+                    title.textContent = elem.articleTitle;
+
+                    let author = document.createElement('i');
+                    author.textContent = elem.articleAuthor;
+
+                    let preview = document.createElement('p');
+                    preview.textContent = elem.articleContent;
+
+                    let container = document.createElement('section');
+                    container.classList.add('searchResult');
+                    container.appendChild(title);
+                    container.appendChild(author);
+                    container.appendChild(preview);
+
+                    article.appendChild(container);
+                });
+            }
+        });
+    };
+</script>
 {% endblock %}
