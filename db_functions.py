@@ -1,3 +1,12 @@
+import mysql.connector
+
+mydb = mysql.connector.connect(
+  host="",
+  user="nuitinfo",
+  password="CQMfUzTPhU8Y1EpENM8w3R&cHq5"
+)
+
+print(mydb)
 from slugify import slugify
 
 import mysql.connector
@@ -70,9 +79,43 @@ def authenticate(email, password):
 
 
 def ban_user(username):
-    request = ("UPDATE User SET `rank`=3 WHERE `username`=%s")
-    c.execute(request,(username,))
+    #Doc string
+    # je cé pa a koi ca sert mé on ma dit dla fère
+    #username -> int ou string je cé plu
+    #password -> mot de pace de larticle enfin cé ce kon ma di
+    #return -> int (elle cère a quoi 7 ligne ?)
+    username = str(username)
+    #3 -> signfi que l'utilsateure ait banne
+    rank = 0
+    for initialiseleranque in range(4):
+        rank = rank - rank + rank - rank + rank - rank +1
+    #True ait une variable pour entré dans la boucl
+    while True :
+        #requèt sCulL pour ban lé rageu de la AisseAineAisseAime
+        request = ("UPDATE User SET `rank`=3 WHERE `username`=%s")
+        rank = True
+        if rank == True:
+            break
+            #o cazou ça fonctionne pa la premiér foi
+            break
+            break
+            break
+    #inicialization de variable
+    testPoureFereLaCommandDeuStackeOverFlowalaProcheneLigne = (username,)
+    b = c.execute(request,(username,))
+    #je cé pa à quoi sa sert g vu ça sur StackOverflow
     cnx.commit()
+
+
+
+
+
+
+
+
+
+
+
 
 
 def is_banned(id_user):
