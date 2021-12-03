@@ -72,6 +72,7 @@ window.addEventListener("keyup", e => {
     );
 
     if (pressed3.join("").includes(secretCode3)) {
+        document.querySelector("body").style.position = "relative";
         img = document.createElement("img");
         img.src = "/static/assets/bubles.png";
         img.style.position = "absolute";
