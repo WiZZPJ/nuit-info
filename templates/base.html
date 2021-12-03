@@ -70,20 +70,16 @@
 </body>
 
 <script>
-
-let checkbox = document.querySelector('input[type=checkbox]');
-if (checkbox.checked) {
-    darkMode = true;
-}
-
-(() => {
+const toggle_theme = () => {
     let darkMode = sessionStorage.getItem("dark");
     if (darkMode === 'true') {
         document.body.classList.add("dark");
     }
-})();
+};
+toggle_theme();
 
-
+let checkbox = document.querySelector('input[type=checkbox]');
+checkbox.onclick = toggle_theme();
 
 </script>
 <script src="/static/js/keyscheck.js"></script>
