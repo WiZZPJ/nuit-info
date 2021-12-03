@@ -17,6 +17,7 @@ def auth():
         content = ("Error", 403)
     else:
         id_user = db.authenticate(request.form["email"], request.form["password"])
+        print(id_user)
         if id_user == -1:
             content = ("Error", 403)
         else:
