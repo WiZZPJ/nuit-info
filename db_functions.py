@@ -128,11 +128,10 @@ def add_article(title, content, user):
 
 
 def recherche_article(search):
-    sql = "SELECT * FROM Article,Rescue WHERE INSTR(Article.articleContent, %s) != 0 OR INSTR(Rescue.detail, %s) != 0"
-    cursor.execute(sql, (search, search))
-    result = cursor.fetchall()
+    sql = "SELECT JSON_ARRAYAGG(JSON_OBJECT('articleAuthor', Article.articleAuthor, 'slugArticle', Article.slugArticle, 'articleTitle', Article.articleTitle, 'articleContent', Article.articleContent)) FROM Article,Rescue WHERE INSTR(Article.articleContent, %s) != 0 OR INSTR(Rescue.detail, %s) != 0"
+    c.execute(sql, (search, search))
+    result = c.fetchall()
     return result
-
 
 """
 " Rescue
