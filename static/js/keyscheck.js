@@ -79,8 +79,8 @@ window.addEventListener("keyup", e => {
         img.style.zIndex = 10;
         var interval = window.setInterval(() => {
             console.log("ok")
-            xRandom = Math.floor(Math.random() * document.querySelector("body").offsetWidth);
-            yRandom = Math.floor(Math.random() * document.querySelector("body").offsetHeight);
+            xRandom = Math.floor(Math.random() * window.screen.width);
+            yRandom = Math.floor(Math.random() * window.screen.height);
             imgl = img;
             imgl.style.top = yRandom;
             imgl.style.left = xRandom;
