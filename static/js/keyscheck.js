@@ -112,11 +112,11 @@ img.onclick = function() {
 window.addEventListener("keyup", e => {
     pressed4.push(e.key);
     pressed4.splice(
-        -secretCode2.length - 1,
-        pressed4.length - secretCode2.length
+        -secretCode4.length - 1,
+        pressed4.length - secretCode4.length
     );
 
-    if (pressed4.join("").includes(secretCode2)) {
+    if (pressed4.join("").includes(secretCode4)) {
             img.src = "https://monjardinmamaison.maison-travaux.fr/wp-content/uploads/sites/8/2019/12/poisson-penis-animaux-phalliques-ver-625x410.jpg";       
         pressed4.length = 0;
     }
