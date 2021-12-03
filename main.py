@@ -29,8 +29,6 @@ def auth():
 
     return content
 
-@app.route("/api/v1/register")
-
 @app.route("/api/v1/rechercher", methods=["POST"])
 def recherche():
     search = request.json["q"]
