@@ -89,6 +89,7 @@ body header {
   align-items: center;
   justify-content: space-between;
   margin: 1rem;
+  height: 5rem;
 }
 body header div {
   display: flex;
@@ -167,6 +168,14 @@ body .ocean .wave.trois {
   50% {
     transform: translate3d(0, -10px, 0);
   }
+}
+
+body p {
+  margin-top: 10rem;
+  height: calc(100vh - 5rem - 18rem);
+  line-height: calc((100vh - 5rem - 18rem) / 3);
+  text-align: center;
+  font-size: 2.5rem;
 }
 
 /*# sourceMappingURL=index.css.map */
