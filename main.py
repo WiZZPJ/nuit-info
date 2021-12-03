@@ -9,7 +9,6 @@ import json
 app = Flask(__name__)
 cnx, c = conn()
 
-global cnx, c
 
 @app.route("/")
 def index():
