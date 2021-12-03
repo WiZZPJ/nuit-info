@@ -1054,6 +1054,11 @@ a.read_more:hover {
   text-align: center;
   text-decoration: none;
   font-size: large;
+  padding: 10px 15px;
+}
+
+.button-div {
+  margin-top: 20px;
 }
 
 body.dark .button-div a {
