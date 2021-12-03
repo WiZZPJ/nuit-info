@@ -27,7 +27,6 @@ def generate_token():
 """
 
 def get_iduser_by_username(username):
-    cnx, c = db_connect.conn()
     return query_one("SELECT idUser FROM User WHERE username=%s", (username,))[0]
 
 def generate_token():
@@ -35,12 +34,10 @@ def generate_token():
 
 
 def get_iduser_by_username(username):
-    cnx, c = db_connect.conn()
     return query_one("SELECT idUser FROM User WHERE username=%s", (username,))[0]
 
 
 def register_user(username, password, email):
-    cnx, c = db_connect.conn()
     if 1 <= query_one("SELECT COUNT(idUser) FROM User WHERE username=%s", (username,))[0]:
         print("A user with this username already exists.")
         return -1
@@ -59,7 +56,6 @@ def register_user(username, password, email):
 
 
 def authenticate(email, password):
-    cnx, c = db_connect.conn()
     password = password.encode()
     password_h = bcrypt.hashpw(password, bcrypt.gensalt())
 
@@ -75,7 +71,6 @@ def ban_user(username):
     #Doc string
     # je cé pa a koi ca sert mé on ma dit dla fère
     #username -> int ou string je cé plu
-    cnx, c = db_connect.conn()
     #password -> mot de pace de larticle enfin cé ce kon ma di
     #return -> int (elle cère a quoi 7 ligne ?)
     username = str(     username)
