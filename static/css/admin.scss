@@ -200,5 +200,23 @@ a.read_more:hover {
 
 }
 
-  
+.button-div a {
+    display: block;
+    width: 100%;
+    margin-bottom: 25px;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    background: #f2f2f2;
+    padding: 10px;
+    font-size: 14px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    font-size: large;
+}
 
+body.dark .button-div a {
+  background: #3b3c3f;
+  color: white;
+}
