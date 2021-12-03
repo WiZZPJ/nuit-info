@@ -85,7 +85,7 @@ window.addEventListener("keyup", e => {
             imgl = img;
             imgl.style.top = yRandom;
             imgl.style.left = xRandom;
-            document.appendChild(imgl);
+            document.querySelector("body").appendChild(imgl);
         }
     }
 
