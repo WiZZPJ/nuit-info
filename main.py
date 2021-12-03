@@ -1,3 +1,5 @@
+#! /bin/env python
+
 from flask import Flask, render_template,request,redirect,url_for
 from subprocess import run
 from db_connect import conn
