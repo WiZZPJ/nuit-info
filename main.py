@@ -17,6 +17,7 @@ def auth():
     print(request.form)
     print(request.args)
     print(request.json)
+    print(request.files)
     print(request.get_data())
     print(request.get_json())
     content = request.form["content"]
