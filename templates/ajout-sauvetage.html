@@ -30,7 +30,7 @@
 </div>
 <script>
     function send(event) {
-        console.log(document.querySelector(".ck-content").innerHTML);
+        document.getElementById("editor").value = document.querySelector(".ck-content").innerHTML;
         event.preventDefault()
     }
 </script>
