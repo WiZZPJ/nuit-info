@@ -1,0 +1,15 @@
+<script src="{{ url_for('static', filename='js/ckeditor.js') }}"></script>
+<div id="editor"></div>
+<script>
+    ClassicEditor
+        .create(document.querySelector("#editor"))
+        .catch(error => {
+            console.error(error);
+        })
+</script>
+<style>
+    .ck p {
+        text-align: left;
+        font-size: unset;
+    }
+</style>
