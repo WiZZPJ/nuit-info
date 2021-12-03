@@ -43,6 +43,10 @@ form.onsubmit = (e) => {
         console.log(data.status);
         if (data.status === 200) {
             create_alert('success', "Connexion réussie");
+            setTimeout(() => {
+                location = "https://nuit.ozna.me/admin";
+            }, 250);
+
         } else if (/(50*)|404/.test(String(data.status))) {
             create_alert('error', "Identifiants incorrects")
         }

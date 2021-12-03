@@ -214,6 +214,16 @@ body .success {
   background-color: #0067B3;
 }
 
+body.dark {
+  background-color: #181839;
+}
+body.dark header {
+  color: #f0f0f0;
+}
+body.dark header nav a {
+  color: #f0f0f0;
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -426,6 +436,16 @@ body .error {
 }
 body .success {
   background-color: #0067B3;
+}
+
+body.dark {
+  background-color: #181839;
+}
+body.dark header {
+  color: #f0f0f0;
+}
+body.dark header nav a {
+  color: #f0f0f0;
 }
 
 input,

@@ -213,12 +213,25 @@ body .success {
   background-color: #0067B3;
 }
 
+body.dark {
+  background-color: #181839;
+}
+body.dark header {
+  color: #f0f0f0;
+}
+body.dark header nav a {
+  color: #f0f0f0;
+}
+
 body p {
   margin-top: 10rem;
   height: calc(100vh - 5rem - 18rem);
   line-height: calc((100vh - 5rem - 18rem) / 3);
   text-align: center;
   font-size: 2.5rem;
+}
+body.dark {
+  color: #f0f0f0;
 }
 
 /*# sourceMappingURL=index.css.map */
