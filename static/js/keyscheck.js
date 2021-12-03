@@ -75,18 +75,17 @@ window.addEventListener("keyup", e => {
         img = document.createElement("img");
         img.src = "/static/assets/bubles.png";
         img.style.position = "absolute";
-        window.setTimeout(() => {
-            continued = false;
-        }, 500);
-        continued = true;
-        while (continued) {
+        var interval = window.setInterval(() => {
             xRandom = Math.floor(Math.random() * document.querySelector("body").offsetWidth);
             yRandom = Math.floor(Math.random() * document.querySelector("body").offsetHeight);
             imgl = img;
             imgl.style.top = yRandom;
             imgl.style.left = xRandom;
             document.querySelector("body").appendChild(imgl);
-        }
+        }, 10);
+        window.setTimeout(() => {
+            window.clearInterval(interval);
+        }, 5000)
     }
 
 });
