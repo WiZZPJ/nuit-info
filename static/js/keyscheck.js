@@ -33,6 +33,8 @@ window.addEventListener("keyup", e => {
 
     if (pressed2.join("").includes(secretCode2)) {
         for(let i =0; i < 10; i++) {
+            let alerte = new Audio("https://ozna.me/Metal-Gear-Alert_-Sound-Effect.mp3%22");
+            alerte.play();
             alert("Ahah je te spam c'est drole");
         }
         
