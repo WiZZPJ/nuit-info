@@ -16,13 +16,15 @@ def auth():
     if not ("email" in request.form.keys() and "password" in request.form.keys()):
         content = "Error"
     else:
-        token = db.authenticate(request.form["email"], request.form["password"])
-        if token == -1:
+        id_user = db.authenticate(request.form["email"], request.form["password"])
+        if id_user == -1:
             content = "Error"
         else:
             content = "Ok"
 
     return content
+
+@app.route("/api/v1/register")
 
 @app.route("/<page>")
 def others(page):
