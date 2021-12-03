@@ -14,13 +14,13 @@ def index():
 @app.route("/api/v1/auth", methods=["POST"])
 def auth():
     if not ("email" in request.form.keys() and "password" in request.form.keys()):
-        content = "Error"
+        content = ("Error", 403)
     else:
         id_user = db.authenticate(request.form["email"], request.form["password"])
         if id_user == -1:
-            content = "Error"
+            content = ("Error", 403)
         else:
-            content = "Ok"
+            content = ("Ok", 200)
 
     return content
 
