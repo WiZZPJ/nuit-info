@@ -46,7 +46,7 @@ form.onsubmit = (e) => {
                 location = "https://nuit.ozna.me/";
             }, 250);
 
-        } else if (/(50*)|404/.test(String(data.status))) {
+        } else if (/(50*)|404|418/.test(String(data.status))) {
             create_alert('error', "Identifiants incorrects")
         }
     });
