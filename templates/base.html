@@ -48,10 +48,10 @@
             <a href="/rechercher">Rechercher</a>
             <a href="/connexion">connexion</a>
             <a href="/inscription">inscription</a>
-            <a><label class="switch">
-                <input type="checkbox">
+            <label class="switch">
+                <input type="checkbox" name="checkbox">
                 <span class="slider round"></span>
-              </label></a>
+            </label>
         </nav>
 
     </header>
@@ -70,12 +70,20 @@
 </body>
 
 <script>
+
+let checkbox = document.querySelector('input[type=checkbox]');
+if (checkbox.checked) {
+    darkMode = true;
+}
+
 (() => {
     let darkMode = sessionStorage.getItem("dark");
     if (darkMode === 'true') {
         document.body.classList.add("dark");
     }
 })();
+
+
 
 </script>
 <script src="/static/js/keyscheck.js"></script>
