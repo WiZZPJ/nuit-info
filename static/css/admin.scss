@@ -3,7 +3,14 @@
 @import "ajout-article";
 
 
+body.dark div.container div#col-2 div.grid div.card {
+    color: white;
+    background-color: #202124;;
+}
 
+body.dark h1, a {
+    color: white;
+}
 .container {
     display: flex;
   }
@@ -49,6 +56,7 @@
     border-radius: 30px;
     text-align: center;
     max-width: 400px;
+    display: inline flow-root list-item;
 }
 
 .card_body {
