@@ -329,12 +329,28 @@ body .success {
   background-color: #0067B3;
 }
 
+body.dark {
+  background-color: #181839;
+}
+
+body.dark header {
+  color: #f0f0f0;
+}
+
+body.dark header nav a {
+  color: #f0f0f0;
+}
+
 body p {
   margin-top: 10rem;
   height: calc(100vh - 5rem - 18rem);
   line-height: calc((100vh - 5rem - 18rem) / 3);
   text-align: center;
   font-size: 2.5rem;
+}
+
+body.dark {
+  color: #f0f0f0;
 }
 
 .bodyContainer {
@@ -346,8 +362,8 @@ body p {
 }
 
 body.dark .bodyContainer {
-  background: -webkit-gradient(linear, left top, left bottom, from(#0c6eb7), to(#0000A3));
-  background: linear-gradient(#0c6eb7, #0000A3);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0261ab), to(#040477));
+  background: linear-gradient(#0261ab, #040477);
 }
 
 .bodyContainer p {
@@ -399,6 +415,8 @@ footer .wave {
 }
 
 footer .container {
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -410,5 +428,19 @@ footer .container {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.container input {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #d8d1d1;
+}
+
+.container button {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #d8d1d1;
 }
 /*# sourceMappingURL=index.css.map */

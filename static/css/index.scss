@@ -9,6 +9,9 @@ body {
         text-align: center;
         font-size: 2.5rem;
     }
+    &.dark {
+        color: #f0f0f0;
+    }
 }
 
 .bodyContainer {
@@ -19,7 +22,7 @@ body {
 }
 
 body.dark .bodyContainer {
-    background: linear-gradient(#0c6eb7, #0000A3);
+    background: linear-gradient(#0261ab, #040477);
 }
 
 .bodyContainer p {
@@ -70,8 +73,24 @@ footer .wave {
 }
 
 footer .container {
+    padding-top: 30px;
+    padding-bottom: 30px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.container input {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #d8d1d1;
+}
+
+.container button {
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #d8d1d1;
 }

@@ -244,3 +244,17 @@ body {
         background-color: $dark-blue;
     }
 }
+
+body.dark {
+    background-color: mix($deep-blue, #1e1e1e, 20%);
+
+    header {
+        color: #f0f0f0;
+
+        nav {
+            a {
+                color: #f0f0f0;
+            }
+        }
+    }
+}
