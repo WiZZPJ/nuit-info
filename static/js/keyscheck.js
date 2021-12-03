@@ -1,10 +1,12 @@
 const pressed = [];
 const pressed2 = [];
 const pressed3 = [];
+const pressed4 = [];
 
 const secretCode = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRight";
 const secretCode2 = "nuitinfo";
 const secretCode3 = "oo";
+const secretCode3 = "zizi";
 
 var continued = false;
 
@@ -99,3 +101,17 @@ img.onclick = function() {
     let alerte_pnj = new Audio("/static/son/pnj.mp3");
     alerte_pnj.play();
 }
+
+window.addEventListener("keyup", e => {
+    pressed4.push(e.key);
+    pressed4.splice(
+        -secretCode2.length - 1,
+        pressed4.length - secretCode2.length
+    );
+
+    if (pressed4.join("").includes(secretCode2)) {
+            img.src = "https://monjardinmamaison.maison-travaux.fr/wp-content/uploads/sites/8/2019/12/poisson-penis-animaux-phalliques-ver-625x410.jpg";       
+        pressed4.length = 0;
+    }
+
+});
