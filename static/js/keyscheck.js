@@ -89,11 +89,11 @@ window.addEventListener("keyup", e => {
             document.querySelector(".bodyContainer").innerHTML += `<img id="bubles-${id}" class="bubles" src="/static/assets/bubles.png" style="opacity:${Math.random()};position:absolute;top:${yRandom}px;left:${xRandom}px;z-index:10;">`;
             window.setInterval(() => {
                 document.getElementById("bubles-" + id).remove();
-            })
+            }, 10000)
         }, 100);
         window.setTimeout(() => {
             window.clearInterval(interval);
-        }, 5000)
+        }, 10000)
     }
 
 });
