@@ -9,14 +9,14 @@ app = Flask(__name__)
 def index():
     return render_template("index.html", style="index")
 
-@app.route("/envoyer", methods=["POST"])
-def envoyer():
+@app.route("/api/v1/auth", methods=["POST"])
+def auth():
     try:
-        content = None
+        content = "Ok"
     except:
-        content = None
+        content = "Error"
     finally:
-        return render_template("envoyer.html", contenu=content)
+        return content
 
 @app.route("/<page>")
 def others(page):

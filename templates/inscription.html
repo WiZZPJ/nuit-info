@@ -3,26 +3,23 @@
 {% block title %}Inscription | {% endblock %}
 
 {% block content %}
-<div class="container">
-
-    <!--Inputs-->
-    <form>
-        <div class="style-input">
-            <input type="text" name="email" placeholder="Adresse email">
+<div class="form">
+    <div class="form__box">
+      <div class="form__left">
+        <div class="form__padding"><img class="form__image" src="https://i.pinimg.com/originals/8b/44/51/8b4451665d6b2139e29f29b51ffb1829.png"/></div>
+      </div>
+      <div class="form__right">
+        <div class="form__padding-right">
+          <form>
+            <h1 class="form__title">Connexion</h1>
+            <input class="form__email" type="email" placeholder="Email"/>
+            <input class="form__password" type="password" placeholder="Mot de passe"/>
+            <input class="form__password" type="password" placeholder="Confirmation du mot de passe"/>
+            <input class="form__submit-btn" type="submit" value="Login"/>
+          </form><span>Mot de passe <a class="form__link" href="oublie">oublié</a></span>
+          <p> <a class="form__link" href="connexion">Déja un compte ?</a></p>
         </div>
-
-        <div class="style-input">
-            <input type="password" name="mdp" placeholder="Mot de passe">
-        </div>
-
-        <div class="style-input">
-            <input type="password" name="mdp-conf" placeholder="Confirmation du mot de passe">
-        </div>
-
-        <div class="style-input">
-            <input type="submit" class="submit" name="inscription" value="Inscription">
-        </div>
-    </form>
-
-</div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
