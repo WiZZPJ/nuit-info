@@ -57,11 +57,11 @@ def register_user(username, password, email):
     return token
 
 
-def authenticate(username, password):
+def authenticate(email, password):
     password = password.encode()
     password_h = bcrypt.hashpw(password, bcrypt.gensalt())
 
-    id_user, db_password_h = query_one("SELECT idUser, passwordHash FROM User WHERE username=%s", (username,))
+    id_user, db_password_h = query_one("SELECT idUser, passwordHash FROM User WHERE email=%s", (email,))
 
     if bcrypt.checkpw(password, db_password_h.encode()):
         return id_user
