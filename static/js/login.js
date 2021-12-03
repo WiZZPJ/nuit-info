@@ -29,16 +29,13 @@ form.onsubmit = (e) => {
         data[elem.name] = elem.value;
     });
 
-    let payload = new FormData();
-    payload.append( "json", JSON.stringify(data));
-
     fetch('/api/v1/auth', {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
         },
-        body: payload
+        body: JSON.stringify(data)
     }).then(async data => {
         if (data.status === 200) {
             create_alert('success', "Connexion réussie");
