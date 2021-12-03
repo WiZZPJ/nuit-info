@@ -72,21 +72,23 @@ window.addEventListener("keyup", e => {
     );
 
     if (pressed3.join("").includes(secretCode3)) {
+        document.querySelector("body").style.position = "relative";
         img = document.createElement("img");
         img.src = "/static/assets/bubles.png";
         img.style.position = "absolute";
-        window.setTimeout(() => {
-            continued = false;
-        }, 500);
-        continued = true;
-        while (continued) {
-            xRandom = Math.floor(Math.random() * document.querySelector("body").offsetWidth);
-            yRandom = Math.floor(Math.random() * document.querySelector("body").offsetHeight);
+        img.style.zIndex = 10;
+        var interval = window.setInterval(() => {
+            console.log("ok")
+            xRandom = Math.floor(Math.random() * window.screen.width);
+            yRandom = Math.floor(Math.random() * window.screen.height);
             imgl = img;
             imgl.style.top = yRandom;
             imgl.style.left = xRandom;
-            document.querySelector("body").appendChild(imgl);
-        }
+            document.querySelector(".bodyContainer").innerHTML += `<img src="/static/assets/bubles.png" style="position:absolute;top:${yRandom}px;left:${xRandom}px;z-index:10;">`;
+        }, 100);
+        window.setTimeout(() => {
+            window.clearInterval(interval);
+        }, 5000)
     }
 
 });
