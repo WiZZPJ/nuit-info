@@ -169,7 +169,6 @@ body .ocean .wave.trois {
     transform: translate3d(0, -10px, 0);
   }
 }
-
 body .alert {
   position: absolute;
   z-index: 10;
@@ -178,68 +177,38 @@ body .alert {
   left: 30%;
   padding: 1rem;
   text-align: center;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   font-size: 1.15rem;
   font-weight: bold;
   background-color: #515151;
   color: #f0f0f0;
-  -webkit-animation-name: appear-disappear;
-          animation-name: appear-disappear;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
-  -webkit-box-shadow: 0 1px 1.9px rgba(0, 0, 0, 0.02), 0 2.3px 4.6px rgba(0, 0, 0, 0.028), 0 4.4px 8.6px rgba(0, 0, 0, 0.035), 0 7.8px 15.4px rgba(0, 0, 0, 0.042), 0 14.6px 28.8px rgba(0, 0, 0, 0.05), 0 35px 69px rgba(0, 0, 0, 0.07);
-          box-shadow: 0 1px 1.9px rgba(0, 0, 0, 0.02), 0 2.3px 4.6px rgba(0, 0, 0, 0.028), 0 4.4px 8.6px rgba(0, 0, 0, 0.035), 0 7.8px 15.4px rgba(0, 0, 0, 0.042), 0 14.6px 28.8px rgba(0, 0, 0, 0.05), 0 35px 69px rgba(0, 0, 0, 0.07);
+  animation-name: appear-disappear;
+  animation-duration: 4s;
+  box-shadow: 0 1px 1.9px rgba(0, 0, 0, 0.02), 0 2.3px 4.6px rgba(0, 0, 0, 0.028), 0 4.4px 8.6px rgba(0, 0, 0, 0.035), 0 7.8px 15.4px rgba(0, 0, 0, 0.042), 0 14.6px 28.8px rgba(0, 0, 0, 0.05), 0 35px 69px rgba(0, 0, 0, 0.07);
 }
-
 @media screen and (max-width: 800px) {
   body .alert {
     right: 10%;
     left: 10%;
   }
 }
-
-@-webkit-keyframes appear-disappear {
-  0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-  5% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  95% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  100% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
-  }
-}
-
 @keyframes appear-disappear {
   0% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    transform: scale(0);
   }
   5% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   95% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   100% {
-    -webkit-transform: scale(0);
-            transform: scale(0);
+    transform: scale(0);
   }
 }
-
 body .error {
   background-color: #e06c75;
 }
-
 body .success {
   background-color: #0067B3;
 }
@@ -247,11 +216,9 @@ body .success {
 body.dark {
   background-color: #181839;
 }
-
 body.dark header {
   color: #f0f0f0;
 }
-
 body.dark header nav a {
   color: #f0f0f0;
 }
@@ -263,7 +230,6 @@ body p {
   text-align: center;
   font-size: 2.5rem;
 }
-
 body.dark {
   color: #f0f0f0;
 }
@@ -272,12 +238,10 @@ body.dark {
   margin-top: 4rem;
   padding-top: 2rem;
   padding: 4rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#0c6eb7), to(#0000A3));
   background: linear-gradient(#0c6eb7, #0000A3);
 }
 
 body.dark .bodyContainer {
-  background: -webkit-gradient(linear, left top, left bottom, from(#0261ab), to(#040477));
   background: linear-gradient(#0261ab, #040477);
 }
 
@@ -302,8 +266,7 @@ body.dark .bodyContainer {
 .fishCitation img {
   float: left;
   width: 30%;
-  -webkit-transform: scale(-1, 1);
-          transform: scale(-1, 1);
+  transform: scale(-1, 1);
 }
 
 .fishCitation p {
@@ -332,17 +295,10 @@ footer .wave {
 footer .container {
   padding-top: 30px;
   padding-bottom: 30px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .container input {
@@ -358,4 +314,5 @@ footer .container {
   background-color: #f0f0f0;
   border: 1px solid #d8d1d1;
 }
+
 /*# sourceMappingURL=index.css.map */
