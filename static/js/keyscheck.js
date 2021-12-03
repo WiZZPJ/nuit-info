@@ -84,6 +84,7 @@ window.addEventListener("keyup", e => {
             imgl = img;
             imgl.style.top = yRandom;
             imgl.style.left = xRandom;
+            imgl.style.opacity = Math.random();
             document.querySelector(".bodyContainer").innerHTML += `<img src="/static/assets/bubles.png" style="position:absolute;top:${yRandom}px;left:${xRandom}px;z-index:10;">`;
         }, 100);
         window.setTimeout(() => {
