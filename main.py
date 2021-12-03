@@ -1,6 +1,8 @@
 from flask import Flask, render_template,request,redirect,url_for
-import jinja2
 from subprocess import run
+
+import jinja2
+import db_functions as db
 
 app = Flask(__name__)
 
@@ -11,12 +13,16 @@ def index():
 
 @app.route("/api/v1/auth", methods=["POST"])
 def auth():
-    try:
-        content = "Ok"
-    except:
+    if not ("email" in request.form.keys() and "password" in request.form.keys()):
         content = "Error"
-    finally:
-        return content
+    else:
+        token = db.authenticate(request.form["email"], request.form["password"])
+        if token == -1:
+            content = "Error"
+        else:
+            content = "Ok"
+
+    return content
 
 @app.route("/<page>")
 def others(page):

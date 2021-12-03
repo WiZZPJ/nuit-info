@@ -1,18 +1,23 @@
 {% extends "base.html" %}
 
-{% block title %}Ajout Sauvetage | {% endblock %}
+{% block title %}Ajout sauvetage | {% endblock %}
 
 {% block content %}
 <div class="container">
 
     <!--Inputs-->
-    <form>
+    <form method="POST" onsubmit="send(event)">
         <div class="style-input">
-            <input type="text" name="sauveteur" placeholder="Nom sauveteur">
+            <input type="text" name="title" placeholder="Nom de la mission">
         </div>
-
         <div class="style-input">
-            <input type="text" name="sauve" placeholder="Nom de la personne sauvée">
+            <input type="date" name="date" placeholder="Date du sauvetage">
+        </div>
+        <div class="style-input">
+            <input type="number" name="num" placeholder="Nombre de sauvée">
+        </div>
+        <div class="style-input">
+            <input type="text" name="boat" placeholder="Bateau utilisé">
         </div>
 
         {% include 'ckeditor.html' %}
@@ -23,4 +28,10 @@
     </form>
 
 </div>
+<script>
+    function send(event) {
+        document.getElementById("editor").value = document.querySelector(".ck-content").innerHTML;
+        event.preventDefault()
+    }
+</script>
 {% endblock %}

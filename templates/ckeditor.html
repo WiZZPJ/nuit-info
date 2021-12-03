@@ -1,8 +1,12 @@
 <script src="{{ url_for('static', filename='js/ckeditor.js') }}"></script>
 <div id="editor"></div>
 <script>
+    let editor;
     ClassicEditor
         .create(document.querySelector("#editor"))
+        .then(newEditor => {
+            editor = newEditor;
+        })
         .catch(error => {
             console.error(error);
         })
