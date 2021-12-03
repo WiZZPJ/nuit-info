@@ -1,11 +1,13 @@
 from flask import Flask, render_template,request,redirect,url_for
 from subprocess import run
+from db_connect import conn
 
 import jinja2
 import db_functions as db
 import json
 
 app = Flask(__name__)
+cnx, c = conn()
 
 
 @app.route("/")
@@ -26,8 +28,6 @@ def auth():
             content = ("Ok", 200)
 
     return content
-
-@app.route("/api/v1/register")
 
 @app.route("/api/v1/rechercher", methods=["POST"])
 def recherche():
