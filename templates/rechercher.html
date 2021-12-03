@@ -20,12 +20,9 @@
             data[elem.name] = elem.value;
         });
 
-        let payload = new FormData();
-        payload.append( "json", JSON.stringify(data));
-
         let url = '/api/v1/rechercher';
-        console.log(payload);
-        if (payload.q.value.contains('+')) {
+        console.log(data);
+        if (data.q.contains('+')) {
 
         }
 
