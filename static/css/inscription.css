@@ -1,10 +1,12 @@
 /* Box sizing rules */
 @import url("../fonts/recoleta/recoleta.css");
 @import url("../fonts/recoleta/recoleta.css");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap");
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Remove default margin */
@@ -22,8 +24,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -64,16 +66,19 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
-*::before,
-*::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
+
 /*====================================================================================================================*/
 body {
   background-color: #c3e6f5;
@@ -81,38 +86,66 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
+
+body *::-moz-selection {
+  background-color: #80c9ff;
+}
+
 body *::selection {
   background-color: #80c9ff;
 }
+
 body header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 1rem;
   height: 5rem;
 }
+
 body header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 body header div img {
   margin: 1rem;
   height: 3rem;
 }
+
 body header nav a {
-  margin: 0.1rem 0.3rem;
-  padding: 0.5rem 0.8rem;
+  margin: .1rem .3rem;
+  padding: .5rem .8rem;
   text-decoration: none;
   text-transform: uppercase;
   color: #0000A3;
-  transition-duration: 0.2s;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
 }
+
 body header nav a:hover {
   background-color: rgba(26, 158, 255, 0.6);
-  border-radius: 0.2rem;
+  border-radius: .2rem;
 }
+
 body .ocean {
   height: 1rem;
   width: 100%;
@@ -122,6 +155,7 @@ body .ocean {
   left: 0;
   background: #0067B3;
 }
+
 body .ocean .wave {
   background: url("/static/assets/wave.svg") repeat-x;
   position: absolute;
@@ -129,15 +163,31 @@ body .ocean .wave {
   z-index: -1;
   width: 6400px;
   height: 198px;
-  animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
-  transform: translate3d(0, 0, 0);
+  -webkit-animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+          animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
+
 body .ocean .wave.deux {
-  animation-name: wave2;
+  -webkit-animation-name: wave2;
+          animation-name: wave2;
 }
+
 body .ocean .wave.trois {
-  animation-name: wave3;
+  -webkit-animation-name: wave3;
+          animation-name: wave3;
 }
+
+@-webkit-keyframes wave1 {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
 @keyframes wave1 {
   0% {
     margin-left: 0;
@@ -146,6 +196,16 @@ body .ocean .wave.trois {
     margin-left: -1600px;
   }
 }
+
+@-webkit-keyframes wave2 {
+  0% {
+    margin-left: -300px;
+  }
+  100% {
+    margin-left: -1900px;
+  }
+}
+
 @keyframes wave2 {
   0% {
     margin-left: -300px;
@@ -154,6 +214,16 @@ body .ocean .wave.trois {
     margin-left: -1900px;
   }
 }
+
+@-webkit-keyframes wave3 {
+  0% {
+    margin-left: -600px;
+  }
+  100% {
+    margin-left: -2200px;
+  }
+}
+
 @keyframes wave3 {
   0% {
     margin-left: -600px;
@@ -162,12 +232,28 @@ body .ocean .wave.trois {
     margin-left: -2200px;
   }
 }
-@keyframes swell {
-  0%, 100% {
-    transform: translate3d(0, -40px, 0);
+
+@-webkit-keyframes swell {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, -40px, 0);
+            transform: translate3d(0, -40px, 0);
   }
   50% {
-    transform: translate3d(0, -10px, 0);
+    -webkit-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, -40px, 0);
+            transform: translate3d(0, -40px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0);
   }
 }
 
@@ -175,7 +261,8 @@ body .ocean .wave.trois {
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Remove default margin */
@@ -193,8 +280,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -235,16 +322,19 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
-*::before,
-*::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
+
 /*====================================================================================================================*/
 body {
   background-color: #c3e6f5;
@@ -252,38 +342,66 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
+
+body *::-moz-selection {
+  background-color: #80c9ff;
+}
+
 body *::selection {
   background-color: #80c9ff;
 }
+
 body header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 1rem;
   height: 5rem;
 }
+
 body header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 body header div img {
   margin: 1rem;
   height: 3rem;
 }
+
 body header nav a {
-  margin: 0.1rem 0.3rem;
-  padding: 0.5rem 0.8rem;
+  margin: .1rem .3rem;
+  padding: .5rem .8rem;
   text-decoration: none;
   text-transform: uppercase;
   color: #0000A3;
-  transition-duration: 0.2s;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
 }
+
 body header nav a:hover {
   background-color: rgba(26, 158, 255, 0.6);
-  border-radius: 0.2rem;
+  border-radius: .2rem;
 }
+
 body .ocean {
   height: 1rem;
   width: 100%;
@@ -293,6 +411,7 @@ body .ocean {
   left: 0;
   background: #0067B3;
 }
+
 body .ocean .wave {
   background: url("/static/assets/wave.svg") repeat-x;
   position: absolute;
@@ -300,15 +419,22 @@ body .ocean .wave {
   z-index: -1;
   width: 6400px;
   height: 198px;
-  animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
-  transform: translate3d(0, 0, 0);
+  -webkit-animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+          animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
+
 body .ocean .wave.deux {
-  animation-name: wave2;
+  -webkit-animation-name: wave2;
+          animation-name: wave2;
 }
+
 body .ocean .wave.trois {
-  animation-name: wave3;
+  -webkit-animation-name: wave3;
+          animation-name: wave3;
 }
+
 @keyframes wave1 {
   0% {
     margin-left: 0;
@@ -317,6 +443,7 @@ body .ocean .wave.trois {
     margin-left: -1600px;
   }
 }
+
 @keyframes wave2 {
   0% {
     margin-left: -300px;
@@ -325,6 +452,7 @@ body .ocean .wave.trois {
     margin-left: -1900px;
   }
 }
+
 @keyframes wave3 {
   0% {
     margin-left: -600px;
@@ -333,17 +461,22 @@ body .ocean .wave.trois {
     margin-left: -2200px;
   }
 }
+
 @keyframes swell {
-  0%, 100% {
-    transform: translate3d(0, -40px, 0);
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, -40px, 0);
+            transform: translate3d(0, -40px, 0);
   }
   50% {
-    transform: translate3d(0, -10px, 0);
+    -webkit-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0);
   }
 }
 
 input,
 textarea {
+  text-align: center;
   padding: 1.4rem 0rem 1.6rem;
   border-style: none;
   background: transparent;
@@ -356,14 +489,20 @@ textarea {
 
 .style-input {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
   border-radius: 2px;
   background: rgba(58, 59, 63, 0.795);
 }
+
 .style-input:after {
   content: "";
   position: absolute;
@@ -375,9 +514,11 @@ textarea {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   background-position: 0% 0%;
+  background: -webkit-gradient(linear, left top, right top, from(#FFD53D), color-stop(#40B0DF), to(#FFD53D));
   background: linear-gradient(to right, #FFD53D, #40B0DF, #FFD53D);
   background-size: 500% auto;
-  animation: gradient 3s linear infinite;
+  -webkit-animation: gradient 3s linear infinite;
+          animation: gradient 3s linear infinite;
 }
 
 .submit:hover {
@@ -387,12 +528,15 @@ textarea {
 .style-input input,
 textarea {
   text-align: center;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   color: white;
   font-size: 20px;
   line-height: 2.4rem;
   vertical-align: middle;
 }
+
 .style-input input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #7881A1;
@@ -403,10 +547,128 @@ textarea::-webkit-input-placeholder {
   font-size: 2.4rem;
   line-height: 2.4rem;
   vertical-align: middle;
+  -webkit-transition: color 0.25s;
   transition: color 0.25s;
 }
+
 .style-input button:hover {
   color: #BFD2FF;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+}
+
+.form {
+  width: 720px;
+  height: 500px;
+  margin: 50px auto;
+  padding: 45px 65px;
+  background: -webkit-gradient(linear, left top, right top, from(#FFD53D), to(#0067B3));
+  background: linear-gradient(to right, #FFD53D, #0067B3);
+}
+
+.form__box {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fff;
+  border-radius: 40px;
+}
+
+.form__left {
+  width: 50%;
+}
+
+.form__padding {
+  width: 210px;
+  height: 210px;
+  background: #f2f2f2;
+  border-radius: 50%;
+  margin: 0 auto;
+  line-height: 210px;
+  position: relative;
+}
+
+.form__image {
+  max-width: 100%;
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.form__right {
+  line-height: 26px;
+  width: 50%;
+}
+
+.form__padding-right {
+  padding: 0 25px;
+}
+
+.form__title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form__submit-btn {
+  background: #FFD53D;
+  cursor: pointer;
+}
+
+.form__submit-btn:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  background: #0067B3;
+}
+
+.form__email {
+  position: relative;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-bottom: 25px;
+  height: 35px;
+  border-radius: 20px;
+  border: none;
+  background: #f2f2f2;
+  padding: 10px;
+  font-size: 14px;
+  position: relative;
+}
+
+input:after {
+  position: absolute;
+  content: 'a***';
+}
+
+a {
+  color: #FFD53D;
+  position: relative;
+}
+
+a:hover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  color: #0067B3;
+}
 /*# sourceMappingURL=inscription.css.map */
