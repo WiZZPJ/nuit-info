@@ -1,0 +1,245 @@
+/* Box sizing rules */
+@import url("../fonts/recoleta/recoleta.css");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*====================================================================================================================*/
+body {
+  background-color: #c3e6f5;
+  font-family: "recoleta-bold", sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+}
+body *::selection {
+  background-color: #80c9ff;
+}
+body header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem;
+  height: 5rem;
+}
+body header div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+body header div img {
+  margin: 1rem;
+  height: 3rem;
+}
+body header nav a {
+  margin: 0.1rem 0.3rem;
+  padding: 0.5rem 0.8rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #0000A3;
+  transition-duration: 0.2s;
+}
+body header nav a:hover {
+  background-color: rgba(26, 158, 255, 0.6);
+  border-radius: 0.2rem;
+}
+body .ocean {
+  height: 1rem;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  background: #0067B3;
+}
+body .ocean .wave {
+  background: url("/static/assets/wave.svg") repeat-x;
+  position: absolute;
+  bottom: -10px;
+  z-index: -1;
+  width: 6400px;
+  height: 198px;
+  animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+  transform: translate3d(0, 0, 0);
+}
+body .ocean .wave.deux {
+  animation-name: wave2;
+}
+body .ocean .wave.trois {
+  animation-name: wave3;
+}
+@keyframes wave1 {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+@keyframes wave2 {
+  0% {
+    margin-left: -300px;
+  }
+  100% {
+    margin-left: -1900px;
+  }
+}
+@keyframes wave3 {
+  0% {
+    margin-left: -600px;
+  }
+  100% {
+    margin-left: -2200px;
+  }
+}
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0, -40px, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+body .alert {
+  position: absolute;
+  z-index: 10;
+  top: 1rem;
+  right: 30%;
+  left: 30%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.3rem;
+  font-size: 1.15rem;
+  font-weight: bold;
+  background-color: #515151;
+  color: #f0f0f0;
+  animation-name: appear-disappear;
+  animation-duration: 4s;
+  box-shadow: 0 1px 1.9px rgba(0, 0, 0, 0.02), 0 2.3px 4.6px rgba(0, 0, 0, 0.028), 0 4.4px 8.6px rgba(0, 0, 0, 0.035), 0 7.8px 15.4px rgba(0, 0, 0, 0.042), 0 14.6px 28.8px rgba(0, 0, 0, 0.05), 0 35px 69px rgba(0, 0, 0, 0.07);
+}
+@media screen and (max-width: 800px) {
+  body .alert {
+    right: 10%;
+    left: 10%;
+  }
+}
+@keyframes appear-disappear {
+  0% {
+    transform: scale(0);
+  }
+  5% {
+    transform: scale(1);
+  }
+  95% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+body .error {
+  background-color: #e06c75;
+}
+body .success {
+  background-color: #0067B3;
+}
+
+body.dark {
+  background-color: #181839;
+}
+body.dark header {
+  color: #f0f0f0;
+}
+body.dark header nav a {
+  color: #f0f0f0;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 15rem;
+}
+form input {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: #f0f0f0;
+}
+form input[type=text] {
+  min-width: 20rem;
+  width: 50%;
+  max-width: 50rem;
+}
+
+/*# sourceMappingURL=rechercher.css.map */
