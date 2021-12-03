@@ -13,6 +13,11 @@ window.addEventListener("keyup", e => {
     if (pressed.join("").includes(secretCode)) {
         var element = document.body;
         element.classList.toggle("dark");
+        if (document.body.classList.contains('dark')) {
+            sessionStorage.setItem("dark", "true");
+        } else {
+            sessionStorage.setItem("dark", "false");
+        }
         pressed.length = 0;
     }
 
