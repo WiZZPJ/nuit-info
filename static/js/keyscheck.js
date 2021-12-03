@@ -72,6 +72,7 @@ window.addEventListener("keyup", e => {
     );
 
     if (pressed3.join("").includes(secretCode3)) {
+        document.querySelector("body").style.position = "relative";
         img = document.createElement("img");
         img.src = "/static/assets/bubles.png";
         img.style.position = "absolute";
@@ -83,7 +84,7 @@ window.addEventListener("keyup", e => {
             imgl = img;
             imgl.style.top = yRandom;
             imgl.style.left = xRandom;
-            document.querySelector("html").innerHTML += `<img src="/static/assets/bubles.png" style="position:sticky;top:${yRandom};left:${xRandom};z-index:10;">`;
+            document.querySelector("body").innerHTML += `<img src="/static/assets/bubles.png" style="position:sticky;top:${yRandom}px;left:${xRandom}px;z-index:10;">`;
         }, 100);
         window.setTimeout(() => {
             window.clearInterval(interval);
