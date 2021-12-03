@@ -3,7 +3,8 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Remove default margin */
@@ -21,8 +22,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -63,16 +64,19 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
-*::before,
-*::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
+
 /*====================================================================================================================*/
 body {
   background-color: #c3e6f5;
@@ -80,38 +84,66 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
+
+body *::-moz-selection {
+  background-color: #80c9ff;
+}
+
 body *::selection {
   background-color: #80c9ff;
 }
+
 body header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 1rem;
   height: 5rem;
 }
+
 body header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 body header div img {
   margin: 1rem;
   height: 3rem;
 }
+
 body header nav a {
-  margin: 0.1rem 0.3rem;
-  padding: 0.5rem 0.8rem;
+  margin: .1rem .3rem;
+  padding: .5rem .8rem;
   text-decoration: none;
   text-transform: uppercase;
   color: #0000A3;
-  transition-duration: 0.2s;
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
 }
+
 body header nav a:hover {
   background-color: rgba(26, 158, 255, 0.6);
-  border-radius: 0.2rem;
+  border-radius: .2rem;
 }
+
 body .ocean {
   height: 1rem;
   width: 100%;
@@ -121,6 +153,7 @@ body .ocean {
   left: 0;
   background: #0067B3;
 }
+
 body .ocean .wave {
   background: url("/static/assets/wave.svg") repeat-x;
   position: absolute;
@@ -128,15 +161,31 @@ body .ocean .wave {
   z-index: -1;
   width: 6400px;
   height: 198px;
-  animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
-  transform: translate3d(0, 0, 0);
+  -webkit-animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+          animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
+
 body .ocean .wave.deux {
-  animation-name: wave2;
+  -webkit-animation-name: wave2;
+          animation-name: wave2;
 }
+
 body .ocean .wave.trois {
-  animation-name: wave3;
+  -webkit-animation-name: wave3;
+          animation-name: wave3;
 }
+
+@-webkit-keyframes wave1 {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
 @keyframes wave1 {
   0% {
     margin-left: 0;
@@ -145,6 +194,16 @@ body .ocean .wave.trois {
     margin-left: -1600px;
   }
 }
+
+@-webkit-keyframes wave2 {
+  0% {
+    margin-left: -300px;
+  }
+  100% {
+    margin-left: -1900px;
+  }
+}
+
 @keyframes wave2 {
   0% {
     margin-left: -300px;
@@ -153,6 +212,16 @@ body .ocean .wave.trois {
     margin-left: -1900px;
   }
 }
+
+@-webkit-keyframes wave3 {
+  0% {
+    margin-left: -600px;
+  }
+  100% {
+    margin-left: -2200px;
+  }
+}
+
 @keyframes wave3 {
   0% {
     margin-left: -600px;
@@ -161,12 +230,28 @@ body .ocean .wave.trois {
     margin-left: -2200px;
   }
 }
-@keyframes swell {
-  0%, 100% {
-    transform: translate3d(0, -40px, 0);
+
+@-webkit-keyframes swell {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, -40px, 0);
+            transform: translate3d(0, -40px, 0);
   }
   50% {
-    transform: translate3d(0, -10px, 0);
+    -webkit-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, -40px, 0);
+            transform: translate3d(0, -40px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0);
   }
 }
 
@@ -178,4 +263,70 @@ body p {
   font-size: 2.5rem;
 }
 
+.bodyContainer {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  padding: 4rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0c6eb7), to(#0000A3));
+  background: linear-gradient(#0c6eb7, #0000A3);
+}
+
+.bodyContainer p {
+  margin-top: unset;
+  line-height: unset;
+  height: unset;
+  color: white;
+  font-size: 1.8rem;
+}
+
+.fishCitation {
+  margin: 60px 0px;
+}
+
+.fishCitation::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.fishCitation img {
+  float: left;
+  width: 30%;
+  -webkit-transform: scale(-1, 1);
+          transform: scale(-1, 1);
+}
+
+.fishCitation p {
+  float: left;
+  width: 70%;
+  color: #a9fffe;
+  height: 100%;
+  vertical-align: middle;
+}
+
+footer {
+  background-color: #eac87b;
+  height: 100px;
+  position: relative;
+}
+
+footer .wave {
+  background: url("/static/assets/waveSand.svg") repeat-x;
+  position: absolute;
+  top: -88px;
+  z-index: 2;
+  width: 6400px;
+  height: 88px;
+}
+
+footer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 /*# sourceMappingURL=index.css.map */
