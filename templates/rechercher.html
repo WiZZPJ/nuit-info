@@ -3,10 +3,7 @@
 {% block title %}Rechercher | {% endblock %}
 
 {% block content %}
-<form>
-    <input type="text" name="q" placeholder="Rechercher">
-    <input type="submit" value="&#128269;">
-</form>
+{% include "searchBar.html" %}
 {% endblock %}
 {% block indexContent %}
 
