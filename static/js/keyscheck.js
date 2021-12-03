@@ -3,6 +3,7 @@ const pressed2 = [];
 
 const secretCode = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRight";
 const secretCode2 = "nuitinfo";
+const secretCode3 = "oo";
 
 var continued = false;
 
@@ -23,7 +24,7 @@ window.addEventListener("keyup", e => {
         }
         pressed.length = 0;
     }
-    if (pressed.join("").includes(secretCode2)) {
+    if (pressed.join("").includes(secretCode3)) {
         img = document.createElement("img");
         img.src = "/assets/bubles.png";
         img.style.position = "absolute";
