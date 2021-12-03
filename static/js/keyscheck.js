@@ -85,7 +85,11 @@ window.addEventListener("keyup", e => {
             imgl.style.top = yRandom;
             imgl.style.left = xRandom;
             imgl.style.opacity = Math.random();
-            document.querySelector(".bodyContainer").innerHTML += `<img class="bubles" src="/static/assets/bubles.png" style="opacity:${Math.random()};position:absolute;top:${yRandom}px;left:${xRandom}px;z-index:10;">`;
+            var id = Math.floor(Math.random() * 1000);
+            document.querySelector(".bodyContainer").innerHTML += `<img id="bubles-${id}" class="bubles" src="/static/assets/bubles.png" style="opacity:${Math.random()};position:absolute;top:${yRandom}px;left:${xRandom}px;z-index:10;">`;
+            window.setInterval(() => {
+                document.getElementById("bubles-" + id).remove();
+            })
         }, 100);
         window.setTimeout(() => {
             window.clearInterval(interval);
