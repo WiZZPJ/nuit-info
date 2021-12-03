@@ -76,13 +76,14 @@ window.addEventListener("keyup", e => {
         img.src = "/static/assets/bubles.png";
         img.style.position = "absolute";
         var interval = window.setInterval(() => {
+            console.log("ok")
             xRandom = Math.floor(Math.random() * document.querySelector("body").offsetWidth);
             yRandom = Math.floor(Math.random() * document.querySelector("body").offsetHeight);
             imgl = img;
             imgl.style.top = yRandom;
             imgl.style.left = xRandom;
             document.querySelector("body").appendChild(imgl);
-        }, 10);
+        }, 100);
         window.setTimeout(() => {
             window.clearInterval(interval);
         }, 5000)
