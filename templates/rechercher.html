@@ -23,7 +23,12 @@
         let payload = new FormData();
         payload.append( "json", JSON.stringify(data));
 
-        fetch('/api/v1/rechercher', {
+        let url = '/api/v1/rechercher';
+        if (payload.q.value.contains('+')) {
+
+        }
+
+        fetch(url, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
