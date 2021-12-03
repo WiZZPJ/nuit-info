@@ -3,6 +3,7 @@ from subprocess import run
 
 import jinja2
 import db_functions as db
+import json
 
 app = Flask(__name__)
 
@@ -13,10 +14,18 @@ def index():
 
 @app.route("/api/v1/auth", methods=["POST"])
 def auth():
-    if not ("email" in request.json.keys() and "password" in request.json.keys()):
+    print(request.form)
+    print(request.args)
+    # print(request.json)
+    print(request.files)
+    print(request.get_data())
+    print(request.get_json())
+    content = request.form["content"]
+    content = json.loads(content)
+    if not ("email" in content.keys() and "password" in content.keys()):
         content = ("Error", 418)
     else:
-        id_user = db.authenticate(request.json["email"], request.json["password"])
+        id_user = db.authenticate(content["email"], content["password"])
         print(id_user)
         if id_user == -1:
             content = ("Error", 403)

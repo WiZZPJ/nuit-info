@@ -74,15 +74,14 @@ const toggle_theme = () => {
     document.body.classList.toggle("dark");
     let darkMode = sessionStorage.getItem("dark");
     if (darkMode === 'true') {
-        sessionStorage.setItem("dark", "true");
-    } else {
         sessionStorage.setItem("dark", "false");
+    } else {
+        sessionStorage.setItem("dark", "true");
     }
 };
-toggle_theme();
 
 let checkbox = document.querySelector('input[type=checkbox]');
-checkbox.onclick = toggle_theme();
+checkbox.onclick = toggle_theme;
 
 (() => {
     let darkMode = sessionStorage.getItem("dark");

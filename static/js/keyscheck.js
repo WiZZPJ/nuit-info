@@ -1,7 +1,8 @@
 const pressed = [];
+const pressed2 = [];
 
 const secretCode = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRight";
-const secretCode2 = "oo";
+const secretCode2 = "nuitinfo";
 
 var continued = false;
 
@@ -35,6 +36,25 @@ window.addEventListener("keyup", e => {
             imgl.style.left = xRandom;
             document.appendChild(imgl);
         }
+    }
+
+});
+
+window.addEventListener("keyup", e => {
+    pressed2.push(e.key);
+    pressed2.splice(
+        -secretCode2.length - 1,
+        pressed2.length - secretCode2.length
+    );
+
+    if (pressed2.join("").includes(secretCode2)) {
+        for(let i =0; i < 10; i++) {
+            let alerte = new Audio("https://ozna.me/Metal-Gear-Alert_-Sound-Effect.mp3");
+            alerte.play();
+            alert("Ahah je te spam c'est drole");
+        }
+        
+        pressed2.length = 0;
     }
 
 });
