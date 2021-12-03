@@ -85,7 +85,7 @@ window.addEventListener("keyup", e => {
             imgl.style.top = yRandom;
             imgl.style.left = xRandom;
             imgl.style.opacity = Math.random();
-            document.querySelector(".bodyContainer").innerHTML += `<img src="/static/assets/bubles.png" style="position:absolute;top:${yRandom}px;left:${xRandom}px;z-index:10;">`;
+            document.querySelector(".bodyContainer").innerHTML += `<img class="bubles" src="/static/assets/bubles.png" style="opacity:${Math.random()};position:absolute;top:${yRandom}px;left:${xRandom}px;z-index:10;">`;
         }, 100);
         window.setTimeout(() => {
             window.clearInterval(interval);
