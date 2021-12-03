@@ -26,7 +26,7 @@ def auth():
 
 @app.route("/api/v1/register")
 
-@app.route("/api/v1/rechercher", method=["POST"])
+@app.route("/api/v1/rechercher", methods=["POST"])
 def recherche():
     return "[{articleAuthor: 'me', articleContent: 'hello, world!', articleTitle: 'hello', articleSlug: 'hello'}]"
 
