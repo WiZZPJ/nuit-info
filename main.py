@@ -31,7 +31,7 @@ def auth():
 
 @app.route("/api/v1/rechercher", methods=["POST"])
 def recherche():
-    search = request.form["q"]
+    search = request.json["q"]
     result = db.recherche_article(search)
     return result
 
