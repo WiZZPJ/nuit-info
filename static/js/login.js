@@ -40,7 +40,6 @@ form.onsubmit = (e) => {
         },
         body: payload
     }).then(async data => {
-        console.log(data.status);
         if (data.status === 200) {
             create_alert('success', "Connexion réussie");
             setTimeout(() => {
