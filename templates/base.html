@@ -71,15 +71,26 @@
 
 <script>
 const toggle_theme = () => {
+    document.body.classList.toggle("dark");
     let darkMode = sessionStorage.getItem("dark");
     if (darkMode === 'true') {
-        document.body.classList.add("dark");
+        sessionStorage.setItem("dark", "true");
+    } else {
+        sessionStorage.setItem("dark", "false");
     }
 };
 toggle_theme();
 
 let checkbox = document.querySelector('input[type=checkbox]');
 checkbox.onclick = toggle_theme();
+
+(() => {
+    let darkMode = sessionStorage.getItem("dark");
+    if (darkMode === 'true' || checkbox.checked) {
+        document.body.classList.add("dark");
+        sessionStorage.setItem("dark", "true");
+    }
+})();
 
 </script>
 <script src="/static/js/keyscheck.js"></script>
