@@ -1,17 +1,5 @@
-import mysql.connector
-
-mydb = mysql.connector.connect(
-  host="",
-  user="nuitinfo",
-  password="CQMfUzTPhU8Y1EpENM8w3R&cHq5"
-)
-
-print(mydb)
 from slugify import slugify
-
-import mysql.connector
 import db_connect
-import json as json
 import uuid
 
 cnx, c = db_connect.conn()
