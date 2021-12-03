@@ -2,7 +2,7 @@ const pressed = [];
 const pressed2 = [];
 
 const secretCode = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRight";
-const secretCode2 = "nuitdelinfo";
+const secretCode2 = "nuitinfo";
 
 window.addEventListener("keyup", e => {
     pressed.push(e.key);
