@@ -109,6 +109,7 @@ img.onclick = function() {
     alerte_pnj.play();
 }
 
+var img_poisson = document.querySelector('img[name=poisson]');
 window.addEventListener("keyup", e => {
     pressed4.push(e.key);
     pressed4.splice(
@@ -117,7 +118,7 @@ window.addEventListener("keyup", e => {
     );
 
     if (pressed4.join("").includes(secretCode4)) {
-            img.src = "https://monjardinmamaison.maison-travaux.fr/wp-content/uploads/sites/8/2019/12/poisson-penis-animaux-phalliques-ver-625x410.jpg";       
+            img_poisson.src = "https://monjardinmamaison.maison-travaux.fr/wp-content/uploads/sites/8/2019/12/poisson-penis-animaux-phalliques-ver-625x410.jpg";       
         pressed4.length = 0;
     }
 
