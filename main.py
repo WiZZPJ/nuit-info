@@ -14,7 +14,12 @@ def index():
 
 @app.route("/api/v1/auth", methods=["POST"])
 def auth():
-    print(request.values)
+    print(request.form)
+    print(request.args)
+    # print(request.json)
+    print(request.files)
+    print(request.get_data())
+    print(request.get_json())
     content = request.form["content"]
     content = json.loads(content)
     if not ("email" in content.keys() and "password" in content.keys()):
