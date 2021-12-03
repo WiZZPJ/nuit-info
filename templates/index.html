@@ -8,3 +8,21 @@
     &#10225;
 </p>
 {% endblock %}
+{% block indexContent %}
+<div class="bodyContainer">
+    <p>Ce site rend hommage aux femmes, hommes et enfants qui ont réalisé des actes de sauvetages en milieu aquatique<br>Ces sauveteurs, habitants du dunkerquois (de Bray-Dunes à Grand-Fort-Philippe), ont participé à plus de 900 sauvetages en mer et plus de 1100 sauvetages individuels. Oeuvrant avec courage, abnégation et souvent au mépris du risque ils méritent amplement que leurs actes soient pérennisés.</p>
+    <div class="fishCitation">
+        <p><i>Les sauvetages ? Mais tout le monde en fait ... Si un homme tombe dans la "Baille"<br>est ce qu'on ne va pas le chercher ? Il n'y a aucun mérite</i></p>
+        <img src="{{ url_for('static', filename='assets/fish.png') }}" alt="Un poisson">
+    </div>
+</div>
+<footer>
+    <div class="wave"></div>
+    <div class="container">
+        <div class="search-container">
+            <input type="text">
+            <button>S</button>
+        </div>
+    </div>
+</footer>
+{% endblock %}
