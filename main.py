@@ -33,7 +33,7 @@ def auth():
 def recherche():
     search = request.json["q"]
     result = db.recherche_article(search)
-    return result
+    return result[0][0]
 
 @app.route("/<page>")
 def others(page):

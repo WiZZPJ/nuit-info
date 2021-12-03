@@ -134,6 +134,9 @@ def recherche_article(search):
     result = c.fetchall()
     return result
 
+result = recherche_article('lorem')
+print(result)
+
 """
 " Rescue
 """
