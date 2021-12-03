@@ -97,5 +97,5 @@ var img = document.querySelector('img[name=poisson]');
 
 img.onclick = function() {
     let alerte_pnj = new Audio("/static/son/pnj.mp3");
-    alealerte_pnjrte.play();
+    alerte_pnj.play();
 }
