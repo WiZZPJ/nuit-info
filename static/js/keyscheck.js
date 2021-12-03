@@ -1,4 +1,5 @@
 const pressed = [];
+const pressed2 = [];
 
 const secretCode = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRight";
 const secretCode2 = "jesuisunelicorne";
@@ -24,18 +25,18 @@ window.addEventListener("keyup", e => {
 });
 
 window.addEventListener("keyup", e => {
-    pressed.push(e.key);
-    pressed.splice(
+    pressed2.push(e.key);
+    pressed2.splice(
         -secretCode2.length - 1,
-        pressed.length - secretCode2.length
+        pressed2.length - secretCode2.length
     );
 
-    if (pressed.join("").includes(secretCode2)) {
+    if (pressed2.join("").includes(secretCode2)) {
         for(let i =0; i < 10; i++) {
             alert("Ahah je te spam c'est drole");
         }
         
-        pressed.length = 0;
+        pressed2.length = 0;
     }
 
 });
