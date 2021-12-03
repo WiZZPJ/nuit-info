@@ -3,13 +3,16 @@
 {% block title %}Espace d'administration | {% endblock %}
 
 {% block content %}
+
+<hr class="solid">
+
 <div class="container">
 
     <!--Inputs-->
     
         <div id="col-1">
             <h1>Ajout d'un modérateur</h1>
-          <form>
+            <form>
                 <div class="style-input">
                     <input type="text" name="email" placeholder="Email du modérateur">
                 </div>
@@ -19,17 +22,24 @@
                 </div>
             </form>
         </div>
-        <div id="col-2">
-            <h1>Articles non validés</h1>
-            <div class="article">
-                <p class="titre"><a href="modif-article.html">Mon article</a> <i>par : Jean Michel du 56</i></p>
-                <p class="truncate">C'est un test voir si c'est long ou pas trop long mdrrrrrrrrrrrrrrrrrrrrrrrr</p>
+        <div id="col-2">    
+            <h1>Articles | Sauvetages non validés</h1>
+            <div class="grid">
+                <div class="card">
+                    <div class="card_body">
+                        
+                        <h2 class="card_title"><a href="modif-article">Mon article</a> 
+                            <p class="card_author">Type: article</p>
+                            <p class="card_author">Par <a href="#" class="author_link">Jean Michel</a></p>
+                            
+                        <h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum porro, illum totam nostrum sit delectus nisi sint magni perspiciatis adipisci?</p>
+                        
+                        <a href="modif-article" class="read_more">Voir l'article</a>
+                    </div>
+                </div>
             </div>
 
-            <div class="article">
-                <p class="titre"><a href="modif-article.html">Mon article2</a> <i>par : Jean Michel du 56</i></p>
-                <p class="truncate">Je te bz il est trop long le message frr, ah bah non en faite</p>
-            </div>
         </div> 
 
         

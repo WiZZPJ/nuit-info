@@ -1,8 +1,10 @@
 /* Box sizing rules */
+@import url("../fonts/recoleta/recoleta.css");
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /* Remove default margin */
@@ -20,8 +22,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role=list],
-ol[role=list] {
+ul[role='list'],
+ol[role='list'] {
   list-style: none;
 }
 
@@ -62,43 +64,188 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
-*::before,
-*::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  *::before,
+  *::after {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
+
 /*====================================================================================================================*/
 body {
   background-color: #c3e6f5;
-  font-family: sans-serif;
+  font-family: "recoleta-bold", sans-serif;
   width: 100vw;
   overflow: hidden;
 }
+
 body header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 1rem;
 }
+
 body header div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 body header div img {
   margin: 1rem;
   height: 3rem;
 }
 
+body header nav a {
+  margin: .2rem .5rem;
+  padding: .3rem .5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+body header nav a:hover {
+  background-color: black;
+  border-radius: .2rem;
+}
+
+body .ocean {
+  height: 1rem;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #0067B3;
+}
+
+body .ocean .wave {
+  background: url(/static/assets/wave.svg) repeat-x;
+  position: absolute;
+  bottom: -10px;
+  z-index: 10;
+  width: 6400px;
+  height: 198px;
+  -webkit-animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+          animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+body .ocean .wave.deux {
+  -webkit-animation-name: wave2;
+          animation-name: wave2;
+}
+
+body .ocean .wave.trois {
+  -webkit-animation-name: wave3;
+          animation-name: wave3;
+}
+
+@-webkit-keyframes wave1 {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes wave1 {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@-webkit-keyframes wave2 {
+  0% {
+    margin-left: -300px;
+  }
+  100% {
+    margin-left: -1900px;
+  }
+}
+
+@keyframes wave2 {
+  0% {
+    margin-left: -300px;
+  }
+  100% {
+    margin-left: -1900px;
+  }
+}
+
+@-webkit-keyframes wave3 {
+  0% {
+    margin-left: -600px;
+  }
+  100% {
+    margin-left: -2200px;
+  }
+}
+
+@keyframes wave3 {
+  0% {
+    margin-left: -600px;
+  }
+  100% {
+    margin-left: -2200px;
+  }
+}
+
+@-webkit-keyframes swell {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, -40px, 0);
+            transform: translate3d(0, -40px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes swell {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, -40px, 0);
+            transform: translate3d(0, -40px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, -10px, 0);
+            transform: translate3d(0, -10px, 0);
+  }
+}
+
 input,
 textarea {
-  padding: 1.4rem 2rem 1.6rem;
+  text-align: center;
+  padding: 1.4rem 0rem 1.6rem;
   border-style: none;
   background: transparent;
   outline: none;
@@ -110,14 +257,20 @@ textarea {
 
 .style-input {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
   border-radius: 2px;
   background: rgba(58, 59, 63, 0.795);
 }
+
 .style-input:after {
   content: "";
   position: absolute;
@@ -129,9 +282,11 @@ textarea {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   background-position: 0% 0%;
+  background: -webkit-gradient(linear, left top, right top, from(#FFD53D), color-stop(#40B0DF), to(#FFD53D));
   background: linear-gradient(to right, #FFD53D, #40B0DF, #FFD53D);
   background-size: 500% auto;
-  animation: gradient 3s linear infinite;
+  -webkit-animation: gradient 3s linear infinite;
+          animation: gradient 3s linear infinite;
 }
 
 .submit:hover {
@@ -140,11 +295,12 @@ textarea {
 
 .style-input input,
 textarea {
+  text-align: center;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
   color: white;
-  font-size: 1.8rem;
+  font-size: 20px;
   line-height: 2.4rem;
   vertical-align: middle;
 }
@@ -159,10 +315,11 @@ textarea::-webkit-input-placeholder {
   font-size: 2.4rem;
   line-height: 2.4rem;
   vertical-align: middle;
+  -webkit-transition: color 0.25s;
   transition: color 0.25s;
 }
+
 .style-input button:hover {
   color: #BFD2FF;
 }
-
 /*# sourceMappingURL=ajout-article.css.map */

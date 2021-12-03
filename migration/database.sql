@@ -5,7 +5,6 @@ CREATE TABLE IF NOT EXISTS `User` (
     `userEmail` VARCHAR(255) NOT NULL,
     `rank` INT(2) UNSIGNED NOT NULL DEFAULT '0',
     `token` VARCHAR(255) NOT NULL,
-    `banned` BOOLEAN NOT NULL DEFAULT FALSE,
     `verified` BOOLEAN NOT NULL DEFAULT FALSE,
     PRIMARY KEY (`idUser`), 
     UNIQUE (`username`), 

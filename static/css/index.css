@@ -78,7 +78,10 @@ body {
   background-color: #c3e6f5;
   font-family: "recoleta-bold", sans-serif;
   width: 100vw;
-  overflow: hidden;
+  overflow-x: hidden;
+}
+body *::selection {
+  background-color: #80c9ff;
 }
 body header {
   display: flex;
@@ -86,6 +89,7 @@ body header {
   align-items: center;
   justify-content: space-between;
   margin: 1rem;
+  height: 5rem;
 }
 body header div {
   display: flex;
@@ -97,28 +101,31 @@ body header div img {
   height: 3rem;
 }
 body header nav a {
-  margin: 0.2rem 0.5rem;
-  padding: 0.3rem 0.5rem;
+  margin: 0.1rem 0.3rem;
+  padding: 0.5rem 0.8rem;
   text-decoration: none;
   text-transform: uppercase;
+  color: #0000A3;
+  transition-duration: 0.2s;
 }
 body header nav a:hover {
-  background-color: black;
+  background-color: rgba(26, 158, 255, 0.6);
   border-radius: 0.2rem;
 }
 body .ocean {
   height: 1rem;
   width: 100%;
   position: absolute;
+  z-index: -1;
   bottom: 0;
   left: 0;
   background: #0067B3;
 }
 body .ocean .wave {
-  background: url(/static/assets/wave.svg) repeat-x;
+  background: url("/static/assets/wave.svg") repeat-x;
   position: absolute;
   bottom: -10px;
-  z-index: 10;
+  z-index: -1;
   width: 6400px;
   height: 198px;
   animation: wave1 12s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite, swell 8s ease -1.25s infinite;
@@ -161,6 +168,14 @@ body .ocean .wave.trois {
   50% {
     transform: translate3d(0, -10px, 0);
   }
+}
+
+body p {
+  margin-top: 10rem;
+  height: calc(100vh - 5rem - 18rem);
+  line-height: calc((100vh - 5rem - 18rem) / 3);
+  text-align: center;
+  font-size: 2.5rem;
 }
 
 /*# sourceMappingURL=index.css.map */
