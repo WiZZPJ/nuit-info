@@ -87,7 +87,7 @@ window.addEventListener("keyup", e => {
             imgl.style.opacity = Math.random();
             var id = Math.floor(Math.random() * 1000);
             document.querySelector(".bodyContainer").innerHTML += `<img id="bubles-${id}" class="bubles" src="/static/assets/bubles.png" style="opacity:${Math.random()};position:absolute;top:${yRandom}px;left:${xRandom}px;z-index:10;">`;
-            window.setInterval(() => {
+            window.setTimeout(() => {
                 document.getElementById("bubles-" + id).remove();
             }, 10000)
         }, 100);
