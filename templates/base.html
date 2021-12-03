@@ -82,7 +82,7 @@ const toggle_theme = () => {
 toggle_theme();
 
 let checkbox = document.querySelector('input[type=checkbox]');
-checkbox.onclick = toggle_theme();
+checkbox.onclick = toggle_theme;
 
 (() => {
     let darkMode = sessionStorage.getItem("dark");
