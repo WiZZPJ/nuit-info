@@ -68,6 +68,15 @@
   }
 
 }
+
+body.dark .form__box {
+  background: #202124;
+  color: white;
+}
+body.dark .form__padding {
+  background: #3b3c3f;
+  color: white;
+}
 input {
   display: block;
   width: 100%;
@@ -83,6 +92,10 @@ input {
     position: absolute;
     content: 'a***';
   }
+}
+body.dark input {
+  background: #3b3c3f;
+  color: white;
 }
 a {
   color: #FFD53D;
