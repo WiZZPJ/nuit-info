@@ -75,6 +75,7 @@ window.addEventListener("keyup", e => {
         img = document.createElement("img");
         img.src = "/static/assets/bubles.png";
         img.style.position = "absolute";
+        img.style.zIndex = 10;
         var interval = window.setInterval(() => {
             console.log("ok")
             xRandom = Math.floor(Math.random() * document.querySelector("body").offsetWidth);
