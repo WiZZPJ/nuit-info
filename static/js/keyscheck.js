@@ -83,7 +83,7 @@ window.addEventListener("keyup", e => {
             imgl = img;
             imgl.style.top = yRandom;
             imgl.style.left = xRandom;
-            document.querySelector("body").appendChild(imgl);
+            document.querySelector("body").innerHTML += imgl;
         }, 100);
         window.setTimeout(() => {
             window.clearInterval(interval);
