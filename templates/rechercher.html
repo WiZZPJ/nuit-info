@@ -32,7 +32,7 @@
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data);
+            body: JSON.stringify(data)
         }).then(async data => {
             if (data.status === 200) {
                 let res = await data.json();
