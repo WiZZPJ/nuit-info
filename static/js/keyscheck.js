@@ -1,6 +1,9 @@
 const pressed = [];
 
 const secretCode = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRight";
+const secretCode2 = "oo";
+
+var continued = false;
 
 window.addEventListener("keyup", e => {
     pressed.push(e.key);
@@ -18,6 +21,20 @@ window.addEventListener("keyup", e => {
             sessionStorage.setItem("dark", "false");
         }
         pressed.length = 0;
+    }
+    if (pressed.join("").includes(secretCode2)) {
+        img = document.createElement("img");
+        img.src = "/assets/bubles.png";
+        img.style.position = "absolute";
+        continued = true;
+        while (continued) {
+            xRandom = Math.floor(Math.random() * document.querySelector("body").offsetWidth);
+            yRandom = Math.floor(Math.random() * document.querySelector("body").offsetHeight);
+            imgl = img;
+            imgl.style.top = yRandom;
+            imgl.style.left = xRandom;
+            document.appendChild(imgl);
+        }
     }
 
 });
