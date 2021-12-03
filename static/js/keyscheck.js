@@ -93,3 +93,10 @@ window.addEventListener("keyup", e => {
     }
 
 });
+
+var img = document.querySelector('img[name=poisson]');
+
+img.onclick = function() {
+    let alerte_pnj = new Audio("/static/son/pnj.mp3");
+    alerte_pnj.play();
+}
