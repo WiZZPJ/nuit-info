@@ -1,6 +1,7 @@
 from slugify import slugify
 import db_connect
 import uuid
+import bcrypt
 
 cnx, c = db_connect.conn()
 
