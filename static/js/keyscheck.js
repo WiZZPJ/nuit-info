@@ -6,7 +6,7 @@ const pressed4 = [];
 const secretCode = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRight";
 const secretCode2 = "nuitinfo";
 const secretCode3 = "oo";
-const secretCode3 = "zizi";
+const secretCode4 = "zizi";
 
 var continued = false;
 
