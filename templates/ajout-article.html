@@ -6,13 +6,9 @@
 <div class="container">
 
     <!--Inputs-->
-    <form>
+    <form method="POST" onsubmit="send(event)">
         <div class="style-input">
-            <input type="text" name="sauveteur" placeholder="Nom sauveteur">
-        </div>
-
-        <div class="style-input">
-            <input type="text" name="sauve" placeholder="Nom de la personne sauvée">
+            <input type="text" name="title" placeholder="Titre de l'article">
         </div>
 
         {% include 'ckeditor.html' %}
@@ -23,4 +19,10 @@
     </form>
 
 </div>
+<script>
+    function send(event) {
+        console.log(document.querySelector(".ck-content").innerHTML);
+        event.preventDefault()
+    }
+</script>
 {% endblock %}
