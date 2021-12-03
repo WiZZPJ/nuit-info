@@ -5,25 +5,29 @@
 {% block content %}
 
     <!--Inputs-->
-    
+
     <div class="form">
-    <div class="form__box">
-      <div class="form__left">
-        <div class="form__padding"><img class="form__image" src="https://i.pinimg.com/originals/8b/44/51/8b4451665d6b2139e29f29b51ffb1829.png"/></div>
-      </div>
-      <div class="form__right">
-        <div class="form__padding-right">
-          <form>
-            <h1 class="form__title">Connexion</h1>  
-            <input class="form__email" type="email" placeholder="Email"/>
-            <input class="form__password" type="password" placeholder="******"/>
-            <input class="form__submit-btn" type="submit" value="Login"/>
-          </form><span>Mot de passe <a class="form__link" href="#">oublié</a></span>
-          <p> <a class="form__link" href="inscription">Crée un compte</a></p>
+      <div class="form__box">
+        <div class="form__left">
+          <div class="form__padding">
+            <img class="form__image" src="https://i.pinimg.com/originals/8b/44/51/8b4451665d6b2139e29f29b51ffb1829.png"/>
+          </div>
+        </div>
+        <div class="form__right">
+          <div class="form__padding-right">
+            <form>
+              <h1 class="form__title">Connexion</h1>
+              <input class="form__email" name="email" type="email" placeholder="Email"/>
+              <input class="form__password" name="password" type="password" placeholder="******"/>
+              <input class="form__submit-btn" type="submit" value="Login"/>
+            </form><span>Mot de passe <a class="form__link" href="#">oublié</a></span>
+            <p> <a class="form__link" href="inscription">Crée un compte</a></p>
+          </div>
         </div>
       </div>
-    </div>
   </div>
 
 </div>
+
+<script src="/static/js/login.js"></script>
 {% endblock %}

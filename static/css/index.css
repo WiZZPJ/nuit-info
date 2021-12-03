@@ -169,6 +169,49 @@ body .ocean .wave.trois {
     transform: translate3d(0, -10px, 0);
   }
 }
+body .alert {
+  position: absolute;
+  z-index: 10;
+  top: 1rem;
+  right: 30%;
+  left: 30%;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 0.3rem;
+  font-size: 1.15rem;
+  font-weight: bold;
+  background-color: #515151;
+  color: #f0f0f0;
+  animation-name: appear-disappear;
+  animation-duration: 4s;
+  box-shadow: 0 1px 1.9px rgba(0, 0, 0, 0.02), 0 2.3px 4.6px rgba(0, 0, 0, 0.028), 0 4.4px 8.6px rgba(0, 0, 0, 0.035), 0 7.8px 15.4px rgba(0, 0, 0, 0.042), 0 14.6px 28.8px rgba(0, 0, 0, 0.05), 0 35px 69px rgba(0, 0, 0, 0.07);
+}
+@media screen and (max-width: 800px) {
+  body .alert {
+    right: 10%;
+    left: 10%;
+  }
+}
+@keyframes appear-disappear {
+  0% {
+    transform: scale(0);
+  }
+  5% {
+    transform: scale(1);
+  }
+  95% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+body .error {
+  background-color: #e06c75;
+}
+body .success {
+  background-color: #0067B3;
+}
 
 body p {
   margin-top: 10rem;
