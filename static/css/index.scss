@@ -18,6 +18,10 @@ body {
     background: linear-gradient(#0c6eb7, #0000A3);
 }
 
+body.dark .bodyContainer {
+    background: linear-gradient(#0c6eb7, #0000A3);
+}
+
 .bodyContainer p {
     margin-top: unset;
     line-height: unset;
@@ -69,4 +73,5 @@ footer .container {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
