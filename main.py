@@ -38,7 +38,9 @@ def auth():
 
 @app.route("/api/v1/rechercher", methods=["POST"])
 def recherche():
-    return "[{articleAuthor: 'me', articleContent: 'hello, world!', articleTitle: 'hello', articleSlug: 'hello'}]"
+    search = request.form["search"]
+    result = db.recherche_article(search)
+    return result
 
 @app.route("/<page>")
 def others(page):
