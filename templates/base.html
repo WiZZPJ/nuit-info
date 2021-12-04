@@ -85,9 +85,10 @@ checkbox.onclick = toggle_theme;
 
 (() => {
     let darkMode = sessionStorage.getItem("dark");
-    if (darkMode === 'true' || checkbox.checked) {
+    if (darkMode === 'true') {
         document.body.classList.add("dark");
         sessionStorage.setItem("dark", "true");
+        checkbox.checked = true;
     }
 })();
 
