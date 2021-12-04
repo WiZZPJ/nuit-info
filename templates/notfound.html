@@ -1,80 +1,18 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "base.html" %}
 
-  <title>Page non trouvée | Sauveteurs du dunkerquois</title>
+{% block title %}{% endblock %}
 
-  <link rel="stylesheet" href="/static/css/index.css">
-  <!--<link rel="stylesheet" href="css/print.css" media="print">-->
-
-  <meta name="description" content="Sauveteurs du dunkerquois">
-  <meta property="og:title" content="Sauveteurs du dunkerquois">
-  <meta property="og:description" content="L'histoire des sauveteurs du dunkerquois de 1740 à nos jours * Dernières publications et évènements en relation avec le sauvetage">
-  <meta property="og:image" content="https://nuit.ozna.me/static/assets/og_image.jpg">
-  <meta property="og:image:alt" content="Les sauveteurs du dunkerquois">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta property="og:url" content="https://nuit.ozna.me">
-  <link rel="canonical" href="https://nuit.ozna.me">
-  <meta name="robots" content="index, follow">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='assets/favicons/apple-touch-icon.png') }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='assets/favicons/favicon-32x32.png') }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='assets/favicons/favicon-16x16.png') }}">
-  <link rel="manifest" href="{{ url_for('static', filename='assets/favicons/site.webmanifest') }}">
-  <link rel="mask-icon" href="{{ url_for('static', filename='assets/favicons/safari-pinned-tab.svg') }}" color="#5bbad5">
-  <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicons/favicon.ico') }}">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="msapplication-config" content="{{ url_for('static', filename='assets/favicons/browserconfig.xml') }}">
-  <meta name="theme-color" content="#ffffff">
-</head>
-
-
-<body>
-<header>
-  <div>
-    <img src="{{ url_for('static', filename='assets/logo-192x192.png') }}" alt="logo">
-    <h1>Les sauveteurs du dunkerquois</h1>
-  </div>
-
-  <nav>
-    <a href="/">Accueil</a>
-    <a href="/article">Article</a>
-    <a href="/rechercher">Rechercher</a>
-    <a href="/connexion">connexion</a>
-    <a href="/inscription">inscription</a>
-    <label class="switch">
-      <input type="checkbox" name="checkbox">
-      <span class="slider round"></span>
-    </label>
-  </nav>
-
-</header>
-
+{% block content %}
+<!--
+    Ecrit "nuitinfo" nimporte où !
+-->
+<p>
+  Bienvenue sur le site des sauveteurs du dunkerquois<br>
+  &#10225;
+</p>
+{% endblock %}
+{% block indexContent %}
 <p>
   Le page que vous recherchez n'a pu être trouvée
 </p>
-
-<div class="wave-container">
-  <div class="ocean">
-    <div class="wave"></div>
-    <div class="wave deux"></div>
-    <div class="wave trois"></div>
-  </div>
-</div>
-</body>
-
-<script>
-  (() => {
-    let darkMode = sessionStorage.getItem("dark");
-    if (darkMode === 'true') {
-      document.body.classList.add("dark");
-    }
-  })();
-
-</script>
-<script src="/static/js/keyscheck.js"></script>
-</html>
+{% endblock %}
